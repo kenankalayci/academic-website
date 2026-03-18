@@ -32,6 +32,15 @@ jobs:
           sudo mv /tmp/hugo /usr/local/bin/hugo
           hugo version
 
+      - name: Validate data directory formats
+        run: |
+          invalid_files=$(find data -type f \( ! -name "*.json" ! -name "*.toml" ! -name "*.yaml" ! -name "*.yml" ! -name "*.xml" \) 2>/dev/null || true)
+          if [ -n "$invalid_files" ]; then
+            echo "Unsupported files found in data/ (move reports to reports/):"
+            echo "$invalid_files"
+            exit 1
+          fi
+
       - name: Build
         run: hugo --minify
 
