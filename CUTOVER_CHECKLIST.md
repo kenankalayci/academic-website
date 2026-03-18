@@ -2,74 +2,105 @@
 
 This checklist covers the remaining manual steps after a green deployment pipeline.
 
+---
+
 ## 1) Confirm GitHub Pages settings
 
-- Repository: `kenankalayci/academic-website`
-- In GitHub, go to Settings -> Pages.
-- Source should be GitHub Actions.
-- Custom domain should be `kenankalayci.com`.
-- Ensure Enforce HTTPS is enabled (or becomes enabled once certificate issuance completes).
+In GitHub: **Settings → Pages**
 
-## 2) Prepare DNS in GoDaddy
+| Setting | Required value |
+|---|---|
+| Source | GitHub Actions |
+| Custom domain | `kenankalayci.com` |
+| Enforce HTTPS | Enabled (activates after certificate issues) |
 
-- Go to DNS Management for `kenankalayci.com`.
-- Lower TTL for records you will change (for example to 600 seconds) at least 15-30 minutes before cutover.
-- Do not change mail-related records:
-  - MX
-  - SPF TXT
-  - DKIM CNAME/TXT
-  - DMARC TXT
+---
 
-## 3) Apply DNS records for GitHub Pages
+## 2) Your existing GoDaddy DNS — exact change table
 
-Set apex/root (`@`) A records to:
+Go to **DNS Management** for `kenankalayci.com`. Here is every row from your current zone and what to do with it:
 
-- 185.199.108.153
-- 185.199.109.153
-- 185.199.110.153
-- 185.199.111.153
+| Type | Name | Current value | Action |
+|---|---|---|---|
+| A | @ | 148.66.137.114 | **DELETE** this record, then add 4 new A records below |
+| A | becop | 148.66.137.114 | Leave unchanged |
+| A | mturkfeedback | 148.66.137.114 | Leave unchanged |
+| NS | @ | ns47.domaincontrol.com | Leave (uneditable) |
+| NS | @ | ns48.domaincontrol.com | Leave (uneditable) |
+| CNAME | calendar | calendar.secureserver.net | Leave (email service) |
+| CNAME | email | email.secureserver.net | Leave (email service) |
+| CNAME | fax | fax.secureserver.net | Leave (email service) |
+| CNAME | files | files.secureserver.net | Leave (email service) |
+| CNAME | ftp | kenankalayci.com | Leave (harmless old artifact) |
+| CNAME | imap | imap.secureserver.net | Leave (email service) |
+| CNAME | mobilemail | mobilemail-v01.prod.mesa1.secureserver.net | Leave (email service) |
+| CNAME | pop | pop.secureserver.net | Leave (email service) |
+| CNAME | smtp | smtp.secureserver.net | Leave (email service) |
+| CNAME | www | kenankalayci.com | **EDIT** → change value to `kenankalayci.github.io` |
+| CNAME | _domainconnect | _domainconnect.gd.domaincontrol.com | Leave (GoDaddy service) |
+| SOA | @ | ns47.domaincontrol.com | Leave (uneditable) |
+| MX | @ | smtp.secureserver.net (Priority 0) | **Leave — do not touch** |
+| MX | @ | mailstore1.secureserver.net (Priority 10) | **Leave — do not touch** |
 
-Set `www` CNAME to:
+**Summary: only 2 things to do** — delete/replace the one A @ record, and edit the www CNAME.
 
-- `kenankalayci.github.io`
+---
 
-Notes:
-- Remove old hosting A/CNAME targets for `@` and `www` only.
-- Keep unrelated subdomains and email records unchanged.
+## 3) New A records to add for @ (apex)
+
+After deleting the old `A @ 148.66.137.114`, add these four records (all with Name `@`):
+
+| Type | Name | Value |
+|---|---|---|
+| A | @ | 185.199.108.153 |
+| A | @ | 185.199.109.153 |
+| A | @ | 185.199.110.153 |
+| A | @ | 185.199.111.153 |
+
+Set TTL to 600 seconds initially. You can raise it to 3600 after 1-2 weeks of confirmed stability.
+
+---
 
 ## 4) Wait for propagation and certificate
 
-- DNS can update in minutes but may take longer depending on caches.
-- In GitHub Pages settings, wait until the domain check passes.
-- Wait until HTTPS is active and Enforce HTTPS is enabled.
+- DNS usually updates within minutes but ISP caches can hold old values temporarily.
+- Back in GitHub Pages settings, wait for the domain check to show green.
+- HTTPS certificate will issue automatically once DNS resolves correctly.
+- Do not click Enforce HTTPS until the certificate is shown as active.
+
+---
 
 ## 5) Post-cutover verification
 
-Check these from multiple networks/devices:
+Check from multiple networks/devices (mobile data is a useful secondary check):
 
 - `https://kenankalayci.com/`
 - `https://www.kenankalayci.com/`
-- Key pages (home, publications, working papers, supervision, contact)
-- A sample of PDF links from reports.
+- Publications, working papers, supervision, contact pages
+- A few PDF links
 
-Optional terminal checks:
+Optional terminal spot-checks:
 
 ```bash
 dig +short kenankalayci.com A
+# Expected: 185.199.108.153 185.199.109.153 185.199.110.153 185.199.111.153
+
 dig +short www.kenankalayci.com CNAME
+# Expected: kenankalayci.github.io.
 ```
 
-Expected:
-- Apex returns GitHub Pages IPs above.
-- `www` resolves to `kenankalayci.github.io`.
+---
 
-## 6) Stabilization window (recommended)
+## 6) Stabilization window (2-4 weeks)
 
-- Keep old WordPress hosting active for 2-4 weeks as rollback safety.
-- Watch for crawl errors and 404s.
-- Patch missing redirects/content quickly.
+- Keep old GoDaddy WordPress hosting active as a read-only rollback.
+- Watch for 404s and crawl errors via Google Search Console.
+- If you need to roll back: restore `A @ 148.66.137.114` and revert `www CNAME` to `kenankalayci.com`.
+
+---
 
 ## 7) After stabilization
 
-- Raise TTL back to a higher value (for example 3600+).
-- Optionally transfer registrar later for cost savings.
+- Raise A record TTL back to 3600+.
+- Optionally transfer registrar from GoDaddy to a lower-cost provider.
+- Cancel WordPress hosting plan on GoDaddy.
