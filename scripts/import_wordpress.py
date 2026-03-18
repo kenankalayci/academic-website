@@ -171,6 +171,12 @@ def main() -> None:
     parser.add_argument("--xml", required=True, type=Path, help="Path to WordPress XML export")
     parser.add_argument("--content-dir", required=True, type=Path, help="Hugo content directory")
     parser.add_argument("--data-dir", required=True, type=Path, help="Data output directory")
+    parser.add_argument(
+        "--reports-dir",
+        type=Path,
+        default=Path("reports"),
+        help="Report output directory for CSV/TXT artifacts",
+    )
     args = parser.parse_args()
 
     items, base_url = parse_items(args.xml)
@@ -190,6 +196,7 @@ def main() -> None:
         write_markdown(md_path, post)
 
     args.data_dir.mkdir(parents=True, exist_ok=True)
+    args.reports_dir.mkdir(parents=True, exist_ok=True)
 
     inventory = {
         "base_url": base_url,
@@ -210,7 +217,7 @@ def main() -> None:
 
     local_uploads, pdf_links = collect_links(published_pages + published_posts)
 
-    with (args.data_dir / "url-inventory.csv").open("w", newline="", encoding="utf-8") as f:
+    with (args.reports_dir / "url-inventory.csv").open("w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
         writer.writerow(["type", "url_or_path"])
         for path in sorted(local_uploads):
@@ -218,7 +225,7 @@ def main() -> None:
         for url in sorted(pdf_links):
             writer.writerow(["pdf_link", url])
 
-    with (args.data_dir / "pdf-inventory.csv").open("w", newline="", encoding="utf-8") as f:
+    with (args.reports_dir / "pdf-inventory.csv").open("w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
         writer.writerow(["pdf_url", "is_local_domain"])
         for url in sorted(pdf_links):
@@ -234,7 +241,7 @@ def main() -> None:
         f"- Local upload paths referenced in content: {len(local_uploads)}",
         f"- PDF links referenced in content: {len(pdf_links)}",
     ]
-    (args.data_dir / "import-report.txt").write_text("\n".join(report_lines) + "\n", encoding="utf-8")
+    (args.reports_dir / "import-report.txt").write_text("\n".join(report_lines) + "\n", encoding="utf-8")
 
     print("Import complete")
     for line in report_lines:

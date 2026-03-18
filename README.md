@@ -16,7 +16,8 @@ This repository contains the static rebuild of kenankalayci.com from a WordPress
 python3 scripts/import_wordpress.py \
   --xml drkenankalayc.WordPress.2026-03-18.xml \
   --content-dir content \
-  --data-dir data
+  --data-dir data \
+  --reports-dir reports
 
 python3 scripts/extract_research_data.py \\
   --publications content/publications/index.md \\
@@ -24,19 +25,19 @@ python3 scripts/extract_research_data.py \\
   --out-dir data
 
 python3 scripts/download_local_uploads.py \
-  --url-csv data/url-inventory.csv \
+  --url-csv reports/url-inventory.csv \
   --out-dir static \
   --base-url https://kenankalayci.com
 
 python3 scripts/build_redirect_map.py \
   --inventory data/content-inventory.json \
-  --out data/redirect-map.csv
+  --out reports/redirect-map.csv
 
 python3 scripts/build_redirect_artifacts.py \\
   --xml drkenankalayc.WordPress.2026-03-18.xml \\
   --inventory data/content-inventory.json \\
-  --out-csv data/legacy-redirects.csv \\
-  --out-md data/legacy-redirects.md
+  --out-csv reports/legacy-redirects.csv \
+  --out-md reports/legacy-redirects.md
 
 python3 scripts/validate_site_links.py \\
   --content-dir content \\
@@ -44,8 +45,8 @@ python3 scripts/validate_site_links.py \\
   --static-dir static \\
   --site-domain kenankalayci.com \\
   --check-external \\
-  --out-csv data/link-validation.csv \\
-  --out-md data/link-validation.md
+  --out-csv reports/link-validation.csv \
+  --out-md reports/link-validation.md
 
 python3 scripts/normalize_internal_links.py \\
   --content-dir content
@@ -57,14 +58,14 @@ python3 scripts/normalize_internal_links.py \\
 - `data/content-inventory.json` page/post inventory for auditing.
 - `data/publications.json` structured publications entries.
 - `data/working_papers.json` structured working-paper and work-in-progress entries.
-- `data/url-inventory.csv` local-upload and PDF link inventory.
-- `data/pdf-inventory.csv` PDF link list with local-domain flags.
-- `data/import-report.txt` import counts and summary.
-- `data/redirect-map.csv` path-level redirect candidates.
-- `data/legacy-redirects.csv` legacy GUID/permalink redirect candidates.
-- `data/legacy-redirects.md` readable redirect candidate table.
-- `data/link-validation.csv` machine-readable link check results.
-- `data/link-validation.md` pre-cutover link validation report.
+- `reports/url-inventory.csv` local-upload and PDF link inventory.
+- `reports/pdf-inventory.csv` PDF link list with local-domain flags.
+- `reports/import-report.txt` import counts and summary.
+- `reports/redirect-map.csv` path-level redirect candidates.
+- `reports/legacy-redirects.csv` legacy GUID/permalink redirect candidates.
+- `reports/legacy-redirects.md` readable redirect candidate table.
+- `reports/link-validation.csv` machine-readable link check results.
+- `reports/link-validation.md` pre-cutover link validation report.
 - `static/redirects.txt` human-maintained redirect mapping reference for cutover.
 
 The internal-link normalizer rewrites absolute `kenankalayci.com` links in page bodies to canonical or root-relative links, while leaving `wordpress_link` front matter untouched for traceability.

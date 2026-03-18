@@ -11,7 +11,7 @@ from pathlib import Path
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Download referenced local uploads")
-    parser.add_argument("--url-csv", required=True, type=Path, help="Path to data/url-inventory.csv")
+    parser.add_argument("--url-csv", required=True, type=Path, help="Path to reports/url-inventory.csv")
     parser.add_argument("--out-dir", required=True, type=Path, help="Output static directory root")
     parser.add_argument("--base-url", default="https://kenankalayci.com", help="Base site URL")
     parser.add_argument("--timeout", type=int, default=20, help="Download timeout seconds")
