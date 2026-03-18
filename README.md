@@ -75,3 +75,5 @@ Note: GitHub Pages does not natively apply `redirects.txt`. Use this file as a m
 ## Deploy
 
 Push to `main`; GitHub Actions workflow in `.github/workflows/deploy.yml` builds and deploys to GitHub Pages.
+
+For manual domain/DNS steps, follow `CUTOVER_CHECKLIST.md`.
