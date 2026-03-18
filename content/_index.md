@@ -5,7 +5,7 @@ lastmod: 2021-01-25 01:17:54
 slug: home
 wordpress_link: "https://kenankalayci.com/"
 aliases:
-	- /home/
+  - /home/
 ---
 
 <strong>CURRENT POSITION</strong>

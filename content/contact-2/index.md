@@ -5,7 +5,7 @@ lastmod: 2013-06-18 00:52:18
 slug: contact-2
 wordpress_link: "https://kenankalayci.com/contact-2/"
 aliases:
-	- /location/
+  - /location/
 ---
 
 <strong>Kenan Kalayci</strong>

@@ -5,7 +5,7 @@ lastmod: 2015-12-17 02:03:26
 slug: confusopoly-why-companies-are-motivated-to-deliberately-confuse
 wordpress_link: "https://kenankalayci.com/blog-posts/confusopoly-why-companies-are-motivated-to-deliberately-confuse/"
 aliases:
-	- /blog-posts/confusopoly-why-companies-are-motivated-to-deliberately-confuse/
+  - /blog-posts/confusopoly-why-companies-are-motivated-to-deliberately-confuse/
 ---
 
 <h1>Confusopoly: Why companies are motivated to deliberately confuse</h1>

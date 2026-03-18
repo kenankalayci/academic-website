@@ -5,7 +5,7 @@ lastmod: 2023-01-03 22:34:55
 slug: links-and-resources
 wordpress_link: "https://kenankalayci.com/blog-posts/links-and-resources/"
 aliases:
-	- /blog-posts/links-and-resources/
+  - /blog-posts/links-and-resources/
 ---
 
 <p><strong>Economics experiments</strong></p>
