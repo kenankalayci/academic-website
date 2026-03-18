@@ -1,0 +1,8 @@
+WordPress import summary
+- Base URL: https://kenankalayci.com
+- Published pages imported: 15
+- Published posts imported: 1
+- Attachments in export: 41
+- Draft items excluded: 3
+- Local upload paths referenced in content: 13
+- PDF links referenced in content: 28

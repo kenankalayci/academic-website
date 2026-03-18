@@ -1,0 +1,66 @@
+baseURL = "https://kenankalayci.com/"
+languageCode = "en-us"
+title = "Dr. Kenan Kalayci"
+enableRobotsTXT = true
+
+[params]
+  description = "Senior Lecturer in Economics"
+
+[permalinks]
+  page = "/:slug/"
+  post = "/blog-posts/:slug/"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[[menu.main]]
+  name = "About"
+  url = "/about/"
+  weight = 10
+
+[[menu.main]]
+  name = "Publications"
+  url = "/publications/"
+  weight = 20
+
+[[menu.main]]
+  name = "Working Papers"
+  url = "/workingpapers/"
+  weight = 30
+
+[[menu.main]]
+  name = "Teaching"
+  url = "/teaching/"
+  weight = 40
+
+[[menu.main]]
+  name = "Supervision"
+  url = "/supervision/"
+  weight = 50
+
+[[menu.main]]
+  name = "Vitae"
+  url = "/vitae/"
+  weight = 60
+
+[[menu.main]]
+  name = "Grants"
+  url = "/grants-awards-fellowships/"
+  weight = 70
+
+[[menu.main]]
+  name = "Links"
+  url = "/links-and-resources/"
+  weight = 80
+
+[[menu.main]]
+  name = "Blog"
+  url = "/blog-posts/"
+  weight = 90
+
+[[menu.main]]
+  name = "Contact"
+  url = "/contact-2/"
+  weight = 100

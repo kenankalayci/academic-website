@@ -1,0 +1,46 @@
+{{ define "main" }}
+  <article class="page-card">
+    <h1>{{ .Title }}</h1>
+    {{ if .Content }}{{ .Content }}{{ end }}
+
+    {{ if eq .Params.data_file "publications" }}
+      {{ $publications := index site.Data "publications" }}
+      {{ if $publications.entries }}
+        <section>
+          <ol>
+            {{ range $publications.entries }}
+              <li>
+                {{ .citation_html | safeHTML }}
+              </li>
+            {{ end }}
+          </ol>
+        </section>
+      {{ end }}
+    {{ end }}
+
+    {{ if eq .Params.data_file "working_papers" }}
+      {{ $working := index site.Data "working_papers" }}
+      {{ if $working.papers }}
+        <section>
+          <h2>Working Papers</h2>
+          <ul>
+            {{ range $working.papers }}
+              <li>{{ .citation_html | safeHTML }}</li>
+            {{ end }}
+          </ul>
+        </section>
+      {{ end }}
+
+      {{ if $working.works_in_progress }}
+        <section>
+          <h2>Works In Progress</h2>
+          <ul>
+            {{ range $working.works_in_progress }}
+              <li>{{ .citation_html | safeHTML }}</li>
+            {{ end }}
+          </ul>
+        </section>
+      {{ end }}
+    {{ end }}
+  </article>
+{{ end }}

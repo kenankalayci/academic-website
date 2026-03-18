@@ -1,0 +1,30 @@
+{
+  "papers": [
+    {
+      "title": "No Pain No Gain: An Experiment on Skill Accumulation",
+      "coauthors": "Lana Friesen and Bhagya Gunawardena",
+      "pdf_url": "https://economics.uq.edu.au/files/54088/Gunawardena_Friesen_Kalayci_v1%20-%2012-09-2025-1.pdf",
+      "citation_html": "<p><a href=\"https://economics.uq.edu.au/files/54088/Gunawardena_Friesen_Kalayci_v1%20-%2012-09-2025-1.pdf\" target=\"_blank\" rel=\"noopener\">No Pain No Gain: An Experiment on Skill Accumulation</a> (with <a href=\"https://economics.uq.edu.au/profile/9550/lana-friesen\">Lana Friesen</a> and Bhagya Gunawardena)</p>"
+    },
+    {
+      "title": "An experimental study of competition in two-sided markets",
+      "coauthors": "Kian N. Loke and Stuart McDonald",
+      "pdf_url": "http://kenankalayci.com/wp-content/uploads/2017/07/KLM_Twosided_230617.pdf",
+      "citation_html": "<p><a href=\"http://kenankalayci.com/wp-content/uploads/2017/07/KLM_Twosided_230617.pdf\">An experimental study of competition in two-sided markets</a> (with Kian N. Loke and Stuart McDonald)</p>"
+    },
+    {
+      "title": "Team Gender Diversity in High-Stake Competitions",
+      "coauthors": "Redzo Mujcic",
+      "pdf_url": "http://media.wix.com/ugd/108e6c_9f45c75c52844c0b998e91c56e6df735.pdf",
+      "citation_html": "<p><a href=\"http://media.wix.com/ugd/108e6c_9f45c75c52844c0b998e91c56e6df735.pdf\" target=\"_blank\" rel=\"noopener noreferrer\" data-type=\"document\">Team Gender Diversity in High-Stake Competitions</a> (with <a href=\"http://www.redzomujcic.com/\">Redzo Mujcic</a>)</p>"
+    }
+  ],
+  "works_in_progress": [
+    {
+      "title": "Algorithmic third-party advice in markets with complex goods",
+      "coauthors": "Zhengyang Bao",
+      "pdf_url": "",
+      "citation_html": "<p>Algorithmic third-party advice in markets with complex goods (with <a href=\"https://zhengyang-bao.github.io/\">Zhengyang Bao</a>)</p>"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+/home/ / 301
+/location/ /contact-2/ 301
+/?p=334 /blog-posts/confusopoly-companies-motivated-deliberately-confuse/ 301
+/?page_id=2 /about/ 301
+/?page_id=221 /blog-posts/ 301
+/?page_id=223 /confusopoly-why-companies-are-motivated-to-deliberately-confuse/ 301
+/?page_id=289 /publications/ 301
+/?page_id=290 /workingpapers/ 301
+/?page_id=296 /grants-awards-fellowships/ 301
+/?page_id=298 /kenan/ 301
+/?page_id=308 /contact-3/ 301
+/?page_id=391 /mturkfeedback/ 301
+/?page_id=397 /links-and-resources/ 301
+/?page_id=441 /supervision/ 301
+/blog-posts/confusopoly-why-companies-are-motivated-to-deliberately-confuse/ /confusopoly-why-companies-are-motivated-to-deliberately-confuse/ 301
+/blog-posts/links-and-resources/ /links-and-resources/ 301
+/uncategorized/confusopoly-companies-motivated-deliberately-confuse/ /blog-posts/confusopoly-companies-motivated-deliberately-confuse/ 301

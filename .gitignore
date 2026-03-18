@@ -1,0 +1,6 @@
+.DS_Store
+.venv/
+public/
+resources/_gen/
+.hugo_build.lock
+*.log
