@@ -8,20 +8,20 @@ aliases:
   - /location/
 ---
 
-<strong>Kenan Kalayci</strong>
+## Contact Details
 
-Room 510, Colin Clark Building (39)
+### Dr Kenan Kalayci
 
-School of Economics, University of Queensland,
+Room 510, Colin Clark Building (39)  
+School of Economics, The University of Queensland  
+St Lucia, QLD 4072, Australia
 
-St. Lucia, QLD 4072
+- Phone: +61 (0) 7 3346 7064
+- Email: [k.kalayci@uq.edu.au](mailto:k.kalayci@uq.edu.au)
 
-Phone: +61 (0) 7 3346 7064
+## Get in Touch
 
-e-mail: k.kalayci@uq.edu.au
+I welcome enquiries about research collaboration, student supervision, and related academic work.
 
-<a href="https://twitter.com/Kalayci_Kenan" rel="noopener" target="_blank">Follow @Kalayci_Kenan on X</a>
-
-<a href="https://www.google.com/maps/place/Colin+Clark+Building,+University+of+Queensland/" rel="noopener" target="_blank">Open Colin Clark Building on Google Maps</a>
-
-&nbsp;
+- [Follow @Kalayci_Kenan on X](https://twitter.com/Kalayci_Kenan)
+- [Open Colin Clark Building on Google Maps](https://www.google.com/maps/place/Colin+Clark+Building,+University+of+Queensland/)
