@@ -76,6 +76,21 @@ textarea:focus-visible {
   margin-bottom: 1rem;
 }
 
+.site-identity {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.site-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--line);
+  flex-shrink: 0;
+}
+
 .site-title {
   margin: 0;
   font-size: 1.6rem;
@@ -186,6 +201,11 @@ textarea:focus-visible {
   .page-card {
     border-radius: 10px;
     padding: 0.95rem;
+  }
+
+  .site-avatar {
+    width: 58px;
+    height: 58px;
   }
 
   .site-title {

@@ -12,6 +12,7 @@ enableRobotsTXT = true
   twitterHandle = "@Kalayci_Kenan"
   twitterUrl = "https://twitter.com/Kalayci_Kenan"
   contactPath = "/contact-2/"
+  profileImage = "/images/profile.jpg"
 
 [permalinks]
   page = "/:slug/"
