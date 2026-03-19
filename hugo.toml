@@ -5,6 +5,13 @@ enableRobotsTXT = true
 
 [params]
   description = "Senior Lecturer in Economics"
+  jobTitle = "Senior Lecturer in Economics"
+  affiliation = "The University of Queensland"
+  email = "k.kalayci@uq.edu.au"
+  keywords = ["experimental economics", "behavioural economics", "industrial organization", "University of Queensland", "Kenan Kalayci"]
+  twitterHandle = "@Kalayci_Kenan"
+  twitterUrl = "https://twitter.com/Kalayci_Kenan"
+  contactPath = "/contact-2/"
 
 [permalinks]
   page = "/:slug/"

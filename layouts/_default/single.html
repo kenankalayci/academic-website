@@ -3,6 +3,12 @@
     <h1>{{ .Title }}</h1>
     {{ if .Content }}{{ .Content }}{{ end }}
 
+    {{ if or (eq .Params.data_file "publications") (eq .Params.data_file "working_papers") }}
+      {{ $collectionType := cond (eq .Params.data_file "publications") "ScholarlyArticle" "CreativeWork" }}
+      {{ $collectionSchema := dict "@context" "https://schema.org" "@type" "CollectionPage" "name" .Title "url" .Permalink "description" (.Description | default (.Summary | plainify) | default .Site.Params.description) "mainEntity" (dict "@type" "ItemList" "itemListElement" (slice (dict "@type" $collectionType))) }}
+      <script type="application/ld+json">{{ $collectionSchema | jsonify }}</script>
+    {{ end }}
+
     {{ if eq .Params.data_file "publications" }}
       {{ $publications := index site.Data "publications" }}
       {{ if $publications.entries }}

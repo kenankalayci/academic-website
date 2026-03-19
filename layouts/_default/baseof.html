@@ -1,13 +1,36 @@
 <!doctype html>
 <html lang="en">
   <head>
+    {{ $title := cond .IsHome .Site.Title (printf "%s | %s" .Title .Site.Title) }}
+    {{ $description := .Description | default .Params.description | default (.Summary | plainify | truncate 160) | default .Site.Params.description }}
+    {{ $keywords := delimit .Site.Params.keywords ", " }}
+    {{ $robots := .Params.robots | default "index,follow" }}
+    {{ $ogType := cond .IsHome "website" "article" }}
+    {{ $personSchema := dict "@context" "https://schema.org" "@type" "Person" "name" .Site.Title "jobTitle" .Site.Params.jobTitle "affiliation" (dict "@type" "Organization" "name" .Site.Params.affiliation) "email" .Site.Params.email "url" .Site.BaseURL "sameAs" (slice .Site.Params.twitterUrl) }}
+    {{ $siteSchema := dict "@context" "https://schema.org" "@type" "WebSite" "name" .Site.Title "url" .Site.BaseURL "inLanguage" "en" }}
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="{{ .Site.Params.description }}" />
+    <meta name="description" content="{{ $description }}" />
+    <meta name="keywords" content="{{ $keywords }}" />
+    <meta name="author" content="{{ .Site.Title }}" />
+    <meta name="robots" content="{{ $robots }}" />
     <meta name="theme-color" content="#0d6b5f" />
-    <title>{{ if .Title }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
+    <meta property="og:site_name" content="{{ .Site.Title }}" />
+    <meta property="og:type" content="{{ $ogType }}" />
+    <meta property="og:title" content="{{ $title }}" />
+    <meta property="og:description" content="{{ $description }}" />
+    <meta property="og:url" content="{{ .Permalink }}" />
+    <meta property="og:locale" content="en_AU" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="{{ $title }}" />
+    <meta name="twitter:description" content="{{ $description }}" />
+    <meta name="twitter:site" content="{{ .Site.Params.twitterHandle }}" />
+    <meta name="twitter:creator" content="{{ .Site.Params.twitterHandle }}" />
+    <title>{{ $title }}</title>
     <link rel="canonical" href="{{ .Permalink }}" />
     <link rel="stylesheet" href="{{ "/css/site.css" | relURL }}" />
+    <script type="application/ld+json">{{ $personSchema | jsonify }}</script>
+    <script type="application/ld+json">{{ $siteSchema | jsonify }}</script>
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
