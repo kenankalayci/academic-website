@@ -39,11 +39,6 @@ enableRobotsTXT = true
   weight = 30
 
 [[menu.main]]
-  name = "Teaching"
-  url = "/teaching/"
-  weight = 40
-
-[[menu.main]]
   name = "Supervision"
   url = "/supervision/"
   weight = 20
