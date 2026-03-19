@@ -34,8 +34,36 @@ a:hover {
   text-decoration: underline;
 }
 
+a:focus,
+a:focus-visible,
+button:focus,
+button:focus-visible,
+input:focus,
+input:focus-visible,
+textarea:focus,
+textarea:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--accent);
+  color: #ffffff;
+  padding: 0.55rem 0.8rem;
+  border-radius: 0 0 8px 8px;
+  z-index: 1000;
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+  left: 1rem;
+}
+
 .site-shell {
-  max-width: 980px;
+  max-width: 900px;
   margin: 0 auto;
   padding: 1.2rem;
 }
@@ -96,11 +124,15 @@ a:hover {
   text-decoration: none;
 }
 
+.site-nav a.active {
+  font-weight: 600;
+}
+
 .page-card {
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: 12px;
-  padding: 1.2rem;
+  padding: 1.3rem;
 }
 
 .page-card h1 {
@@ -110,6 +142,12 @@ a:hover {
 
 .page-card h2 {
   margin-top: 1.5rem;
+  line-height: 1.3;
+}
+
+.page-card p,
+.page-card li {
+  line-height: 1.7;
 }
 
 .page-card ol,
@@ -128,6 +166,17 @@ a:hover {
   text-align: center;
 }
 
+@media (max-width: 900px) {
+  .site-shell {
+    max-width: 100%;
+    padding: 1rem;
+  }
+
+  .site-nav ul {
+    gap: 0.4rem;
+  }
+}
+
 @media (max-width: 700px) {
   .site-shell {
     padding: 0.8rem;
@@ -141,5 +190,20 @@ a:hover {
 
   .site-title {
     font-size: 1.35rem;
+  }
+}
+
+@media (max-width: 620px) {
+  .site-nav ul {
+    gap: 0.35rem;
+  }
+
+  .site-nav a {
+    padding: 0.3rem 0.55rem;
+    font-size: 0.9rem;
+  }
+
+  .page-card {
+    padding: 1rem;
   }
 }

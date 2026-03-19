@@ -4,11 +4,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="{{ .Site.Params.description }}" />
+    <meta name="theme-color" content="#0d6b5f" />
     <title>{{ if .Title }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
     <link rel="canonical" href="{{ .Permalink }}" />
     <link rel="stylesheet" href="{{ "/css/site.css" | relURL }}" />
   </head>
   <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <div class="site-shell">
       <header class="site-header">
         <h1 class="site-title"><a href="{{ "/" | relURL }}">{{ .Site.Title }}</a></h1>
@@ -24,7 +26,7 @@
           </ul>
         </nav>
       </header>
-      <main>
+      <main id="main-content">
         {{ block "main" . }}{{ end }}
       </main>
       <footer class="site-footer">
