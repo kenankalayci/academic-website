@@ -414,6 +414,8 @@ textarea:focus-visible {
 
 .citation-list {
   max-width: none;
+  margin-left: 0;
+  padding-left: 0;
 }
 
 .citation-list-ordered {
@@ -446,6 +448,19 @@ textarea:focus-visible {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+.research-card .citation-list,
+.research-card .citation-list-ordered,
+.research-card .citation-list-unordered {
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.research-card .citation-list > li,
+.research-card .citation-list-ordered > li,
+.research-card .citation-list-unordered > li {
+  padding-left: 0;
 }
 
 
