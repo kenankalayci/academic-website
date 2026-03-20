@@ -406,10 +406,6 @@ textarea:focus-visible {
 
 .research-collection {
   margin-top: 1.8rem;
-  padding: 1.15rem;
-  border: 1px solid var(--line);
-  border-radius: calc(var(--radius-md) + 2px);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255, 237, 0, 0.08));
 }
 
 .research-collection h2 {
@@ -565,7 +561,4 @@ textarea:focus-visible {
     font-size: 1.25rem;
   }
 
-  .research-collection {
-    padding: 0.9rem;
-  }
 }
