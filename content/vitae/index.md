@@ -8,7 +8,7 @@ wordpress_link: "https://kenankalayci.com/vitae/"
 
 ## Curriculum Vitae
 
-- [Download full CV (PDF)](/wp-content/uploads/2013/06/KALAYCI_CV_July2017.pdf)
+- [Download full CV (PDF)](/CV/KALAYCI_CV.pdf)
 
 ## Professional Snapshot
 
