@@ -1,8 +1,8 @@
 {{ define "main" }}
-  <section class="page-card">
+  <section class="page-card list-card content-flow">
     <h1>{{ .Title }}</h1>
     {{ .Content }}
-    <ul>
+    <ul class="section-link-list">
       {{ range .Pages }}
         <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
       {{ end }}

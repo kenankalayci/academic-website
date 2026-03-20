@@ -1,5 +1,5 @@
 {{ define "main" }}
-  <article class="page-card">
+  <article class="page-card single-card content-flow{{ if or (eq .Params.data_file "publications") (eq .Params.data_file "working_papers") }} research-card{{ end }}">
     <h1>{{ .Title }}</h1>
     {{ if .Content }}{{ .Content }}{{ end }}
 
@@ -12,8 +12,8 @@
     {{ if eq .Params.data_file "publications" }}
       {{ $publications := index site.Data "publications" }}
       {{ if $publications.entries }}
-        <section>
-          <ol>
+        <section class="research-collection research-collection-publications">
+          <ol class="citation-list citation-list-ordered">
             {{ range $publications.entries }}
               <li>
                 {{ .citation_html | safeHTML }}
@@ -27,9 +27,9 @@
     {{ if eq .Params.data_file "working_papers" }}
       {{ $working := index site.Data "working_papers" }}
       {{ if $working.papers }}
-        <section>
+        <section class="research-collection research-collection-working-papers">
           <h2>Working Papers</h2>
-          <ul>
+          <ul class="citation-list citation-list-unordered">
             {{ range $working.papers }}
               <li>{{ .citation_html | safeHTML }}</li>
             {{ end }}
@@ -38,9 +38,9 @@
       {{ end }}
 
       {{ if $working.works_in_progress }}
-        <section>
+        <section class="research-collection research-collection-in-progress">
           <h2>Works In Progress</h2>
-          <ul>
+          <ul class="citation-list citation-list-unordered">
             {{ range $working.works_in_progress }}
               <li>{{ .citation_html | safeHTML }}</li>
             {{ end }}
