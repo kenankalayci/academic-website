@@ -28,7 +28,7 @@ BA in Economics, Sabanci University, 2005
 
 ## Publications
 
-- **Pyramid Schemes.** 2026. *Journal of Economic Behavior and Organization* (with Gönül Doğan and Priscilla Man). ([pdf](/wp-content/uploads/2026/01/PyramidSchemes.pdf))
+- **Pyramid Schemes.** 2026. *Journal of Economic Behavior and Organization*, 241, 107398 (with Gönül Doğan and Priscilla Man). ([pdf](/wp-content/uploads/2026/01/PyramidSchemes.pdf))
 - **Regulating Bubbles Away?** 2020. *Journal of Economic Behavior and Organization* (with Zhengyang Bao, Andreas Leibbrandt, and Carlos Oyarzun). ([pdf](/wp-content/uploads/2020/08/Bao_et_al_JEBO_2020.pdf))
 - **Costly Voting: A Large-scale Real Effort Experiment.** 2019. *Experimental Economics* (with Marco Faravelli and Carlos Pimienta). ([pdf](/wp-content/uploads/2017/07/FKP_2017_08_22.pdf))
 - **A Minimum Effort Coordination Game Experiment in Continuous Time.** 2018. *Experimental Economics* (with Ailin Leng, Lana Friesen, and Priscilla Man). ([pdf](/wp-content/uploads/2013/06/Ailin_continuous_minimum_29_Jan_2016_submitted.pdf))
@@ -40,11 +40,19 @@ BA in Economics, Sabanci University, 2005
 
 [Full publications list →](/publications/)
 
+## Replication Reports
+
+- **A comment on "Firm Donations and Political Rhetoric: Evidence from a National Ban"** [Cagé et al., *AEJ: Economic Policy*, 2024]. 2026. Institute for Replication (I4R) (with Andriyanto, Nicolas Eugster, and Guan-Jia Huang). ([pdf](/papers/I4R_Comment_Cage_et_al_2026.pdf), [replication package](https://github.com/kenankalayci/ReplicationGames_Cageetal_2024))
+
+## Working Papers
+
+- **Team Gender Diversity in High-Stake Competitions** (with Redzo Mujcic).
+- **No Pain, No Gain: An Experiment on Skill Accumulation** (with Lana Friesen and Bhagya Gunawardena). Submitted. ([pdf](https://economics.uq.edu.au/files/54088/Gunawardena_Friesen_Kalayci_v1%20-%2012-09-2025-1.pdf))
+- **Algorithmic Third-Party Advice in Markets with Complex Goods** (with Zhengyang Bao).
+
 ## Works in Progress
 
-- **No Pain No Gain: An Experiment on Skill Accumulation** (with Lana Friesen and Bhagya Gunawardena). ([pdf](https://economics.uq.edu.au/files/54088/Gunawardena_Friesen_Kalayci_v1%20-%2012-09-2025-1.pdf))
-- **An Experimental Study of Competition in Two-Sided Markets** (with Kian N. Loke and Stuart McDonald). ([pdf](/wp-content/uploads/2017/07/KLM_Twosided_230617.pdf))
-- **Team Gender Diversity in High-Stake Competitions** (with Redzo Mujcic).
-- **Algorithmic Third-Party Advice in Markets with Complex Goods** (with Zhengyang Bao).
+- **Information Disclosure in Private-Value Auctions** (with Xinghao Yao).
+- **A Continuous-Time Principal-Agent Game Experiment** (with Ailin Leng and Shuchen Zhao).
 
 [Full working papers list →](/workingpapers/)

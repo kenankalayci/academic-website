@@ -5,7 +5,7 @@
       "year": 2026,
       "coauthors": "Gönül Doğan, and Priscilla Man",
       "pdf_url": "https://kenankalayci.com/wp-content/uploads/2026/01/PyramidSchemes.pdf",
-      "citation_html": "Pyramid Schemes. 2026. <em><a href=\"https://www.sciencedirect.com/science/article/pii/S0167268125005153\" target=\"_blank\" rel=\"noopener\">Journal of Economic Behavior and Organization</a>, </em>(with <a href=\"https://sites.google.com/site/gonuldoganligtvoet/\">Gönül Doğan</a>, and <a href=\"https://economics.uq.edu.au/profile/10140/priscilla-man\" target=\"_blank\" rel=\"noopener\">Priscilla Man</a>). (<a href=\"https://kenankalayci.com/wp-content/uploads/2026/01/PyramidSchemes.pdf\" target=\"_blank\" rel=\"noopener\">pdf</a>)"
+      "citation_html": "Pyramid Schemes. 2026. <em><a href=\"https://www.sciencedirect.com/science/article/pii/S0167268125005153\" target=\"_blank\" rel=\"noopener\">Journal of Economic Behavior and Organization</a></em>, 241, 107398 (with <a href=\"https://sites.google.com/site/gonuldoganligtvoet/\">Gönül Doğan</a>, and <a href=\"https://economics.uq.edu.au/profile/10140/priscilla-man\" target=\"_blank\" rel=\"noopener\">Priscilla Man</a>). (<a href=\"https://kenankalayci.com/wp-content/uploads/2026/01/PyramidSchemes.pdf\" target=\"_blank\" rel=\"noopener\">pdf</a>)"
     },
     {
       "title": "Regulating Bubbles Away? Experiment-Based Evidence of Price Limits and Trading Restrictions in Asset Markets with Deterministic and Stochastic Fundamental Values",
@@ -62,6 +62,15 @@
       "coauthors": "Jan Potters",
       "pdf_url": "http://kenankalayci.com/wp-content/uploads/2013/06/BuyerConfusion_IJIO_2011_KalayciPotters.pdf",
       "citation_html": "Buyer confusion and market prices. 2011, <em>International Journal of Industrial Organization</em>, (with <a href=\"https://sites.google.com/site/jjmpotters/home\">Jan Potters</a>). (<a href=\"http://kenankalayci.com/wp-content/uploads/2013/06/BuyerConfusion_IJIO_2011_KalayciPotters.pdf\">pdf</a>)"
+    }
+  ],
+  "replication_reports": [
+    {
+      "title": "A comment on \"Firm Donations and Political Rhetoric: Evidence from a National Ban\"",
+      "year": 2026,
+      "coauthors": "Andriyanto, Nicolas Eugster, and Guan-Jia Huang",
+      "pdf_url": "/papers/I4R_Comment_Cage_et_al_2026.pdf",
+      "citation_html": "A comment on &ldquo;Firm Donations and Political Rhetoric: Evidence from a National Ban&rdquo; [Cagé et al., <em>AEJ: Economic Policy</em>, 2024]. 2026, Institute for Replication (I4R), (with Andriyanto, Nicolas Eugster, and Guan-Jia Huang). (<a href=\"/papers/I4R_Comment_Cage_et_al_2026.pdf\">pdf</a>, <a href=\"https://github.com/kenankalayci/ReplicationGames_Cageetal_2024\" target=\"_blank\" rel=\"noopener\">replication package</a>)"
     }
   ]
 }

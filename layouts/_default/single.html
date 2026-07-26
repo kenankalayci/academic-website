@@ -22,6 +22,19 @@
           </ol>
         </section>
       {{ end }}
+
+      {{ if $publications.replication_reports }}
+        <section class="research-collection research-collection-replication">
+          <h2>Replication Reports</h2>
+          <ol class="citation-list citation-list-ordered">
+            {{ range $publications.replication_reports }}
+              <li>
+                {{ .citation_html | safeHTML }}
+              </li>
+            {{ end }}
+          </ol>
+        </section>
+      {{ end }}
     {{ end }}
 
     {{ if eq .Params.data_file "working_papers" }}
