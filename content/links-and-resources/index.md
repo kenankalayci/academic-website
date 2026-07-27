@@ -9,14 +9,14 @@ aliases:
 ---
 
 <p><strong>Economics experiments</strong></p>
-<p><a href="http://www.ereuben.net/teach/index.html" target="_blank" rel="noopener noreferrer">zTree resources</a></p>
+<p><a href="https://www.ereuben.net/teach/index.html" target="_blank" rel="noopener noreferrer">zTree resources</a></p>
 <p><a href="https://sites.google.com/site/ztreenotes/lecturenotes" target="_blank" rel="noopener noreferrer">zTree crash course</a></p>
-<p><a href="http://otree.readthedocs.io/en/latest/tutorial/intro.html" target="_blank" rel="noopener noreferrer">oTree tutorial</a></p>
-<p><a href="http://veconlab.econ.virginia.edu/admin.htm" target="_blank" rel="noopener noreferrer">Veconlab for classroom experiments</a></p>
+<p><a href="https://otree.readthedocs.io/en/latest/tutorial/intro.html" target="_blank" rel="noopener noreferrer">oTree tutorial</a></p>
+<p><a href="https://veconlab.econ.virginia.edu/admin.htm" target="_blank" rel="noopener noreferrer">Veconlab for classroom experiments</a></p>
 <p><strong>Writing</strong></p>
 <p><a href="https://web.stanford.edu/~niederle/ResearchTopic.pdf">Choosing and pursuing unusual research topics</a></p>
 <p><a href="https://journals.sagepub.com/doi/full/10.1177/0569434515627089" target="_blank" rel="noopener noreferrer">How to Build an Economic Model in Your Spare Time</a></p>
-<p><a href="http://blogs.ubc.ca/khead/research/research-advice/formula" target="_blank" rel="noopener noreferrer">The introduction formula </a></p>
+<p><a href="https://blogs.ubc.ca/khead/research/research-advice/formula" target="_blank" rel="noopener noreferrer">The introduction formula </a></p>
 <p><a href="https://marcfbellemare.com/wordpress/12797" target="_blank" rel="noopener noreferrer">Body</a></p>
 <p><a href="https://marcfbellemare.com/wordpress/12060" target="_blank" rel="noopener noreferrer">Conclusion</a></p>
 <p><a href="https://www.brown.edu/research/shapiro/pdfs/foursteps.pdf" target="_blank" rel="noopener noreferrer">Four steps to an applied micro paper. </a></p>
@@ -24,7 +24,7 @@ aliases:
 <p><a href="https://my.uq.edu.au/files/11020/guide-literature-review-research-students.pdf">Guide to literature reviews</a></p>
 <p><strong>Data Analysis</strong></p>
 <p><a href="https://web.stanford.edu/~gentzkow/research/CodeAndData.pdf" target="_blank" rel="noopener noreferrer">Code and data for the social sciences: A practitioner's guide.</a></p>
-<p><a href="http://geocenter.github.io/StataTraining/portfolio/01_resource/">Stata cheat sheets</a></p>
+<p><a href="https://geocenter.github.io/StataTraining/portfolio/01_resource/">Stata cheat sheets</a></p>
 <p><a href="https://stats.idre.ucla.edu/stata/">UCLA's Stata resources</a></p>
 <p><a href="https://library.princeton.edu/dss/training">Princeton's data resources</a></p>
 <p><strong>Presentation</strong></p>

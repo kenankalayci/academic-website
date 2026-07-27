@@ -4,11 +4,13 @@ This repository contains the static rebuild of kenankalayci.com from a WordPress
 
 ## Current status
 
-- Hugo scaffold created.
-- Automated XML import script available in `scripts/import_wordpress.py`.
-- Local upload downloader available in `scripts/download_local_uploads.py`.
-- Redirect map generator available in `scripts/build_redirect_map.py`.
-- First-pass content generation has been run from `drkenankalayc.WordPress.2026-03-18.xml`.
+- The Hugo migration and website-audit improvement pass are complete locally.
+- The production build, internal-link checks, generated-HTML validation, JSON
+  validation, and desktop/mobile browser checks pass.
+- The current audit changes have not yet been committed, pushed, or deployed.
+- See `HANDOVER.md` for the completed work, verification evidence, publishing
+  procedure, and maintenance notes.
+- See `CUTOVER_CHECKLIST.md` for the manual GitHub Pages and GoDaddy DNS steps.
 
 ## Run the migration scripts
 

@@ -1,13 +1,16 @@
 ---
-title: "Links"
+title: "Blog"
 date: 2015-12-17 02:00:30
-lastmod: 2021-01-25 01:18:32
+lastmod: 2026-07-27 00:00:00
 slug: blog-posts
 wordpress_link: "https://kenankalayci.com/blog-posts/"
+description: "Articles by Kenan Kalayci on behavioural economics, consumer confusion, market complexity, and competition."
 ---
 
-If you are interested in writing a thesis with me please read<span style="color: #000080;"> <a style="color: #000080;" href="/supervision/">this guide</a></span>.
+Articles and public writing on behavioural economics, consumer decision-making, and competition.
 
-My<span style="color: #000080;"><em> <a style="color: #000080;" href="/confusopoly-why-companies-are-motivated-to-deliberately-confuse/">article on Confusopoly </a></em></span>published at the Conversation.
+## Confusopoly: Why companies are motivated to deliberately confuse
 
-Some<span style="color: #000080;"><em> <a style="color: #000080;" href="/links-and-resources/">links</a></em></span> to academic advice.
+When consumers struggle to compare complicated products and prices, firms may have weaker incentives to compete. This article explains why complexity can become a deliberate market strategy and what policy can—and cannot—do about it.
+
+[Read the article →](/confusopoly-why-companies-are-motivated-to-deliberately-confuse/)

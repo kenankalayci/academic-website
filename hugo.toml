@@ -2,17 +2,23 @@ baseURL = "https://kenankalayci.com/"
 locale = "en-us"
 title = "Dr. Kenan Kalayci"
 enableRobotsTXT = true
+disableKinds = ["taxonomy", "term"]
 
 [params]
-  description = "Senior Lecturer in Economics"
+  description = "Experimental economist studying behavioural industrial organization, consumer decision-making, and market design."
   jobTitle = "Senior Lecturer in Economics"
   affiliation = "The University of Queensland"
   email = "k.kalayci@uq.edu.au"
   keywords = ["experimental economics", "behavioural economics", "industrial organization", "University of Queensland", "Kenan Kalayci"]
   twitterHandle = "@Kalayci_Kenan"
   twitterUrl = "https://twitter.com/Kalayci_Kenan"
-  contactPath = "/contact-2/"
-  profileImage = "/images/profile.jpg"
+  linkedinUrl = "https://au.linkedin.com/in/kenankalayci"
+  uqProfileUrl = "https://about.uq.edu.au/experts/2487"
+  orcidUrl = "https://orcid.org/0000-0002-4815-7344"
+  scholarUrl = "https://scholar.google.com.au/citations?user=eFCAIjYAAAAJ"
+  contactPath = "/contact/"
+  profileImage = "images/profile.jpg"
+  socialImage = "/images/kenan-kalayci-social-card.jpg"
 
 [permalinks]
   page = "/:slug/"
@@ -65,5 +71,5 @@ enableRobotsTXT = true
 
 [[menu.main]]
   name = "Contact"
-  url = "/contact-2/"
+  url = "/contact/"
   weight = 90

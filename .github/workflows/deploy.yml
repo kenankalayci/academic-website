@@ -42,7 +42,20 @@ jobs:
           fi
 
       - name: Build
-        run: hugo --minify
+        run: hugo --minify --cleanDestinationDir
+
+      - name: Validate internal links
+        run: |
+          python3 scripts/validate_site_links.py \
+            --content-dir content \
+            --inventory data/content-inventory.json \
+            --static-dir static \
+            --site-domain kenankalayci.com \
+            --out-csv /tmp/link-validation.csv \
+            --out-md /tmp/link-validation.md
+
+      - name: Validate generated HTML
+        run: python3 scripts/validate_built_site.py --public-dir public
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

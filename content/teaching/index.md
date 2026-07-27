@@ -24,4 +24,4 @@ I teach and supervise across behavioural economics, industrial organization, and
 
 If you are interested in Masters, Honours, or PhD research, please see [Supervision](/supervision/) for how I work with students and how to get started.
 
-For teaching or supervision enquiries, use the details on the [Contact](/contact-2/) page.
+For teaching or supervision enquiries, use the details on the [Contact](/contact/) page.

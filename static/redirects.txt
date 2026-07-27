@@ -1,5 +1,12 @@
 /home/ / 301
-/location/ /contact-2/ 301
+/location/ /contact/ 301
+/contact-2/ /contact/ 301
+/contact-3/ /contact/ 301
+/kenan/ /about/ 301
+/mturkfeedback/ / 301
+/blog-posts/confusopoly-why-companies-are-motivated-to-deliberately-confuse/ /confusopoly-why-companies-are-motivated-to-deliberately-confuse/ 301
+/blog-posts/confusopoly-companies-motivated-deliberately-confuse/ /confusopoly-why-companies-are-motivated-to-deliberately-confuse/ 301
+/uncategorized/confusopoly-companies-motivated-deliberately-confuse/ /confusopoly-why-companies-are-motivated-to-deliberately-confuse/ 301
 /?p=334 /blog-posts/confusopoly-companies-motivated-deliberately-confuse/ 301
 /?page_id=2 /about/ 301
 /?page_id=221 /blog-posts/ 301

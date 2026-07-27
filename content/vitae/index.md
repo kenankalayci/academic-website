@@ -17,4 +17,4 @@ wordpress_link: "https://kenankalayci.com/vitae/"
 - Australian Research Council Discovery Early Career Research Fellow (2016-2018)
 - Visiting Scholar, University of Oxford (2017-2018)
 
-For research collaboration or supervision discussions, please use the [Contact](/contact-2/) page.
+For research collaboration or supervision discussions, please use the [Contact](/contact/) page.

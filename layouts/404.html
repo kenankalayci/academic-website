@@ -1,0 +1,12 @@
+{{ define "main" }}
+  <article class="page-card error-card content-flow">
+    <p class="eyebrow">Error 404</p>
+    <h1>That page has moved or no longer exists.</h1>
+    <p>This site was rebuilt from an older WordPress website, so some historical links may have changed. The main sections below should help you find what you need.</p>
+    <p class="action-row">
+      <a class="button-link button-primary" href="{{ "/" | relURL }}">Return home</a>
+      <a class="button-link" href="{{ "/publications/" | relURL }}">Publications</a>
+      <a class="button-link" href="{{ "/contact/" | relURL }}">Contact</a>
+    </p>
+  </article>
+{{ end }}

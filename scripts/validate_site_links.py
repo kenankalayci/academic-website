@@ -72,6 +72,31 @@ def collect_alias_paths(content_dir: Path) -> set[str]:
     return aliases
 
 
+def collect_content_paths(content_dir: Path) -> set[str]:
+    """Derive current Hugo page routes directly from content front matter."""
+    routes = {"/"}
+    for path in content_dir.rglob("*.md"):
+        if path.name == "_index.md":
+            routes.add("/")
+            continue
+
+        text = path.read_text(encoding="utf-8")
+        front_matter = text.split("\n---\n", 1)[0] if text.startswith("---\n") else ""
+        match = re.search(r"^slug:\s*[\"']?([^\"'\n]+)", front_matter, flags=re.MULTILINE)
+        slug = match.group(1).strip() if match else path.stem
+
+        if path.name == "index.md":
+            if path.parent.parent == content_dir:
+                routes.add(f"/{slug}/")
+            else:
+                section = path.parent.parent.relative_to(content_dir).parts[0]
+                routes.add(f"/{section}/{slug}/")
+        else:
+            section = path.parent.relative_to(content_dir).parts[0]
+            routes.add(f"/{section}/{slug}/")
+    return routes
+
+
 def check_external(url: str, timeout: float) -> tuple[bool, str]:
     request = urllib.request.Request(url, method="HEAD", headers={"User-Agent": "Mozilla/5.0"})
     try:
@@ -109,6 +134,7 @@ def main() -> None:
 
     inventory = json.loads(args.inventory.read_text(encoding="utf-8"))
     allowed = known_paths(inventory)
+    allowed.update(collect_content_paths(args.content_dir))
     allowed.update(collect_alias_paths(args.content_dir))
     urls = sorted(collect_content_urls(args.content_dir))
 
@@ -122,27 +148,19 @@ def main() -> None:
         if url.startswith("/"):
             check_type = "internal_relative"
             path = parsed.path
-            if path.startswith("/wp-content/uploads/"):
-                target = args.static_dir / path.lstrip("/")
-                if not target.exists():
-                    status = "fail"
-                    detail = "missing local upload file"
-            elif path not in allowed:
-                status = "warn"
-                detail = "path not in known published routes"
+            static_target = args.static_dir / path.lstrip("/")
+            if path not in allowed and not static_target.is_file():
+                status = "fail"
+                detail = "path not in current content routes or static files"
 
         elif parsed.scheme in {"http", "https"}:
             if parsed.netloc.endswith(args.site_domain):
                 check_type = "internal_absolute"
                 path = parsed.path or "/"
-                if path.startswith("/wp-content/uploads/"):
-                    target = args.static_dir / path.lstrip("/")
-                    if not target.exists():
-                        status = "fail"
-                        detail = "missing local upload file"
-                elif path not in allowed:
-                    status = "warn"
-                    detail = "path not in known published routes"
+                static_target = args.static_dir / path.lstrip("/")
+                if path not in allowed and not static_target.is_file():
+                    status = "fail"
+                    detail = "path not in current content routes or static files"
             else:
                 check_type = "external"
                 if args.check_external:
@@ -168,7 +186,11 @@ def main() -> None:
 
     args.out_csv.parent.mkdir(parents=True, exist_ok=True)
     with args.out_csv.open("w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=["url", "type", "status", "detail"])
+        writer = csv.DictWriter(
+            f,
+            fieldnames=["url", "type", "status", "detail"],
+            lineterminator="\n",
+        )
         writer.writeheader()
         writer.writerows(rows)
 
@@ -200,6 +222,8 @@ def main() -> None:
     args.out_md.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
     print(f"Validation complete: total={total}, fail={fails}, warn={warns}")
+    if fails:
+        raise SystemExit(1)
 
 
 if __name__ == "__main__":

@@ -1,58 +1,70 @@
 ---
 title: "Dr. Kenan Kalaycı"
 date: 2013-06-18 00:52:24
-lastmod: 2021-01-25 01:17:54
+lastmod: 2026-07-27 00:00:00
 slug: home
 wordpress_link: "https://kenankalayci.com/"
+description: "Dr Kenan Kalayci is a Senior Lecturer in Economics at the University of Queensland researching behavioural industrial organization, consumer decision-making, and market design."
 aliases:
   - /home/
+  - /mturkfeedback/
 ---
 
-## Current Position
+<div class="home-intro">
 
-Senior Lecturer in Economics, The University of Queensland
+<p class="eyebrow">Experimental economist · Brisbane, Australia</p>
 
-Dr. Kenan Kalayci is an experimental economist working at the intersection of behavioural economics and industrial organization. His research examines how market complexity, product differentiation, and pricing design influence consumer decisions and competition.
+<h2>Markets, complexity, and consumer decisions</h2>
 
-## Education
+<p class="home-lede">I am a Senior Lecturer in Economics at The University of Queensland. My research uses experiments to study how market complexity, product differentiation, and pricing design influence consumer decisions and competition.</p>
 
-PhD in Economics, Tilburg University, 2011
+<p class="action-row">
+  <a class="button-link button-primary" href="/CV/KALAYCI_CV.pdf">Download CV <span aria-hidden="true">↓</span></a>
+  <a class="button-link" href="/publications/">View publications <span aria-hidden="true">→</span></a>
+  <a class="button-link" href="/contact/">Contact me <span aria-hidden="true">→</span></a>
+</p>
 
-BA in Economics, Sabanci University, 2005
+</div>
 
-## Research Highlights
+## Research areas
 
-- Behavioural industrial organization and consumer confusion in markets
-- Experimental methods for studying pricing, product complexity, and competition
-- Publications in Experimental Economics, Journal of Economic Behavior and Organization, and International Journal of Industrial Organization
+<div class="research-areas">
+  <div>
+    <h3>Behavioural industrial organization</h3>
+    <p>How consumer biases and limited attention shape firm strategy and market outcomes.</p>
+  </div>
+  <div>
+    <h3>Complexity and obfuscation</h3>
+    <p>How firms use product design, pricing, and information to influence comparison and choice.</p>
+  </div>
+  <div>
+    <h3>Experimental economics</h3>
+    <p>Laboratory and field methods for testing market design and consumer-policy interventions.</p>
+  </div>
+</div>
 
-## Publications
+## Selected publications
 
-- **Pyramid Schemes.** 2026. *Journal of Economic Behavior and Organization*, 241, 107398 (with Gönül Doğan and Priscilla Man). ([pdf](/wp-content/uploads/2026/01/PyramidSchemes.pdf))
-- **Regulating Bubbles Away?** 2020. *Journal of Economic Behavior and Organization* (with Zhengyang Bao, Andreas Leibbrandt, and Carlos Oyarzun). ([pdf](/wp-content/uploads/2020/08/Bao_et_al_JEBO_2020.pdf))
-- **Costly Voting: A Large-scale Real Effort Experiment.** 2019. *Experimental Economics* (with Marco Faravelli and Carlos Pimienta). ([pdf](/wp-content/uploads/2017/07/FKP_2017_08_22.pdf))
-- **A Minimum Effort Coordination Game Experiment in Continuous Time.** 2018. *Experimental Economics* (with Ailin Leng, Lana Friesen, and Priscilla Man). ([pdf](/wp-content/uploads/2013/06/Ailin_continuous_minimum_29_Jan_2016_submitted.pdf))
-- **Complexity and Biases.** 2016. *Experimental Economics* (with Marta Serra-Garcia). ([pdf](/wp-content/uploads/2013/06/Complexityandbiases_ExpEcon2015_KalayciSerraGarcia.pdf))
-- **Complexity and Asset Legitimacy in Retirement Investment.** 2016. *Journal of Behavioral and Experimental Economics* (with Alan Tse and Lana Friesen). ([pdf](/wp-content/uploads/2013/06/Retirement_JBehExpEcon2016_Tse_etal.pdf))
-- **Confusopoly: Competition and Obfuscation in Markets.** 2016. *Experimental Economics*. ([pdf](/wp-content/uploads/2013/06/Confusopoly_ExpEcon2015_Kalayci.pdf))
-- **Price Complexity and Buyer Confusion in Markets.** 2015. *Journal of Economic Behavior and Organization*. ([pdf](/wp-content/uploads/2013/06/PriceComplexity_JEBO2015_Kalayci.pdf))
-- **Buyer Confusion and Market Prices.** 2011. *International Journal of Industrial Organization* (with Jan Potters). ([pdf](/wp-content/uploads/2013/06/BuyerConfusion_IJIO_2011_KalayciPotters.pdf))
+- **Pyramid Schemes.** 2026. *Journal of Economic Behavior and Organization*, 241, 107398 (with Gönül Doğan and Priscilla Man). [Download the paper (PDF, 8.7 MB)](/wp-content/uploads/2026/01/PyramidSchemes.pdf)
+- **Do Regulations Work?** 2020. *Journal of Economic Behavior and Organization* (with Zhengyang Bao, Andreas Leibbrandt, and Carlos Oyarzun). [Download the paper (PDF, 4.9 MB)](/wp-content/uploads/2020/08/Bao_et_al_JEBO_2020.pdf)
+- **Confusopoly: Competition and Obfuscation in Markets.** 2016. *Experimental Economics*. [Download the paper (PDF, 659 KB)](/wp-content/uploads/2013/06/Confusopoly_ExpEcon2015_Kalayci.pdf)
 
-[Full publications list →](/publications/)
+[View all publications →](/publications/)
 
-## Replication Reports
+## Replication reports
 
-- **A comment on "Firm Donations and Political Rhetoric: Evidence from a National Ban"** [Cagé et al., *AEJ: Economic Policy*, 2024]. 2026. Institute for Replication (I4R) (with Andriyanto, Nicolas Eugster, and Guan-Jia Huang). ([pdf](/papers/I4R_Comment_Cage_et_al_2026.pdf), [replication package](https://github.com/kenankalayci/ReplicationGames_Cageetal_2024))
+- **A comment on "Firm Donations and Political Rhetoric: Evidence from a National Ban"** [Cagé et al., *AEJ: Economic Policy*, 2024]. 2026. Institute for Replication (I4R) (with Andriyanto, Nicolas Eugster, and Guan-Jia Huang). [Download the report (PDF, 320 KB)](/papers/I4R_Comment_Cage_et_al_2026.pdf)
 
-## Working Papers
+## Current research
 
-- **Team Gender Diversity in High-Stake Competitions** (with Redzo Mujcic).
-- **No Pain, No Gain: An Experiment on Skill Accumulation** (with Lana Friesen and Bhagya Gunawardena). Submitted. ([pdf](https://economics.uq.edu.au/files/54088/Gunawardena_Friesen_Kalayci_v1%20-%2012-09-2025-1.pdf))
+- **Team Gender Diversity in High-Stake Competitions** (with Redzo Mujcic). [Download the paper (PDF, 867 KB)](https://media.wix.com/ugd/108e6c_9f45c75c52844c0b998e91c56e6df735.pdf)
+- **No Pain, No Gain: An Experiment on Skill Accumulation** (with Lana Friesen and Bhagya Gunawardena).
 - **Algorithmic Third-Party Advice in Markets with Complex Goods** (with Zhengyang Bao).
 
-## Works in Progress
+[View working papers and projects →](/workingpapers/)
 
-- **Information Disclosure in Private-Value Auctions** (with Xinghao Yao).
-- **A Continuous-Time Principal-Agent Game Experiment** (with Ailin Leng and Shuchen Zhao).
+## Supervision
 
-[Full working papers list →](/workingpapers/)
+I welcome enquiries from students interested in behavioural economics, industrial organization, experimental economics, and related topics. I treat students as research colleagues and expect them to take ownership of their projects.
+
+[How I work with students →](/supervision/)

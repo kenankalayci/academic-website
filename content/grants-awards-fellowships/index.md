@@ -14,4 +14,4 @@ Excellence in Teaching Award, UQ School of Economics, <em>Industrial Economics</
 
 UQ Early Career Research Grant, $20000 (2013-2014)
 
-Distinguished Teaching Certificate, UQ School of Economics, <em>Experimental Economics</em> (small undergraduate courses), <a href="http://www.joycevromen.com" target="_blank" rel="noopener">2012</a>.
+Distinguished Teaching Certificate, UQ School of Economics, <em>Experimental Economics</em> (small undergraduate courses), 2012.

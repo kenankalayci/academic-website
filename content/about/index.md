@@ -1,9 +1,26 @@
 ---
 title: "About"
 date: 2019-01-07 20:24:52
-lastmod: 2019-01-07 20:24:52
+lastmod: 2026-07-27 00:00:00
 slug: about
 wordpress_link: "https://kenankalayci.com/about/"
+description: "Biography, research interests, and academic profiles for Dr Kenan Kalayci, experimental economist at The University of Queensland."
+aliases:
+  - /kenan/
 ---
 
-Dr. Kenan Kalaycı is an experimental economist whose research focus is on behavioural economics and industrial organization. Kenan received his PhD in Economics from Tilburg University and is a Senior Lecturer in Economics at the University of Queensland. Kenan has been an Australian Research Council Discovery Early Career Research Fellow between 2016-2018 and a visiting scholar at the University of Oxford in 2017-2018. Kenan's main research has been in the growing field of behavioural industrial organization, which is the study of markets incorporating insights from psychology and other related disciplines. Kenan has been one of the pioneers in the empirical study of this field, developing experimental methodology to study issues of spurious product differentiation and price discrimination in markets. His research has been published in the International Journal of Industrial Organisation, Journal of Economic Behaviour and Organisation, and Experimental Economics.
+Dr Kenan Kalaycı is an experimental economist and Senior Lecturer in Economics at The University of Queensland. His research sits at the intersection of behavioural economics and industrial organization, with a particular focus on consumer confusion, product and price complexity, and the strategic design of markets.
+
+He develops laboratory and field experiments to study how firms respond when consumers have limited attention or difficulty comparing products. This work examines spurious product differentiation, obfuscation, price discrimination, consumer policy, and competition.
+
+Kenan received his PhD in Economics from Tilburg University in 2011. He was an Australian Research Council Discovery Early Career Researcher Award fellow and a visiting scholar at the University of Oxford during 2017–2018.
+
+His research has appeared in the *Journal of Economic Behavior and Organization*, *Experimental Economics*, the *International Journal of Industrial Organization*, and the *Journal of Behavioral and Experimental Economics*.
+
+## Research profiles
+
+- [UQ Experts profile](https://about.uq.edu.au/experts/2487)
+- [ORCID: 0000-0002-4815-7344](https://orcid.org/0000-0002-4815-7344)
+- [Google Scholar](https://scholar.google.com.au/citations?user=eFCAIjYAAAAJ)
+- [LinkedIn](https://au.linkedin.com/in/kenankalayci)
+- [X / Twitter](https://twitter.com/Kalayci_Kenan)
