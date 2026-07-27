@@ -6,11 +6,11 @@
     {{ if or (eq .Params.data_file "publications") (eq .Params.data_file "working_papers") }}
       {{ $collectionType := cond (eq .Params.data_file "publications") "ScholarlyArticle" "CreativeWork" }}
       {{ $collectionSchema := dict "@context" "https://schema.org" "@type" "CollectionPage" "name" .Title "url" .Permalink "description" (.Description | default (.Summary | plainify) | default .Site.Params.description) "mainEntity" (dict "@type" "ItemList" "itemListElement" (slice (dict "@type" $collectionType))) }}
-      <script type="application/ld+json">{{ $collectionSchema | jsonify }}</script>
+      <script type="application/ld+json">{{ $collectionSchema | jsonify | safeJS }}</script>
     {{ end }}
 
     {{ if eq .Params.data_file "publications" }}
-      {{ $publications := index site.Data "publications" }}
+      {{ $publications := index hugo.Data "publications" }}
       {{ if $publications.entries }}
         <section class="research-collection research-collection-publications">
           <ol class="citation-list citation-list-ordered">
@@ -38,7 +38,7 @@
     {{ end }}
 
     {{ if eq .Params.data_file "working_papers" }}
-      {{ $working := index site.Data "working_papers" }}
+      {{ $working := index hugo.Data "working_papers" }}
       {{ if $working.papers }}
         <section class="research-collection research-collection-working-papers">
           <h2>Working Papers</h2>
