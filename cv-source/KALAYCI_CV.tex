@@ -17,6 +17,18 @@
 \usepackage{xcolor}
 \usepackage{needspace}
 
+%% ---------------------------------------------------------------
+%% PUBLIC / FULL VERSION SWITCH
+%%
+%%   \publictrue   public version (kenankalayci.com) — hides unsuccessful
+%%                 grant applications and internal school-level items
+%%   \publicfalse  full version (appraisal / promotion) — shows everything
+%%
+%% Content is hidden, never deleted, so one source produces both versions.
+%% ---------------------------------------------------------------
+\newif\ifpublic
+\publictrue
+
 %% Fixed-width right-aligned date column — ensures dates align across ALL sections
 \newcolumntype{D}{>{\raggedleft\arraybackslash}p{2.2cm}}
 
@@ -183,15 +195,20 @@ Industrial Organization \enspace$\cdot$\enspace Behavioral Economics \enspace$\c
 %% ===== GRANTS =================================================
 \section{Grants}
 
+%% The "Awarded" heading only earns its keep when the unsuccessful list
+%% follows it; in the public version there is nothing to distinguish it from.
+\ifpublic\else
 \textit{Awarded}
 
 \vspace{2pt}
+\fi
 \begin{tabularx}{\linewidth}{@{}XD@{}}
   ARC Discovery Early Career Research Award, \textit{Market responses to behavioural consumer policy: Experimental study}, Australian Research Council, \$358,000 & 2016--2019 \\
   UQ Early Career Research Grant, \textit{Bid timing in continuous auctions}, \$20,000 & 2013--2014 \\
   UQ New Staff Research Start-Up Grant, \textit{Complexity and bounded rationality in credit markets}, \$12,000 & 2011--2012 \\
 \end{tabularx}
 
+\ifpublic\else
 \vspace{6pt}
 \textit{Applications (unsuccessful)}
 
@@ -209,6 +226,7 @@ Industrial Organization \enspace$\cdot$\enspace Behavioral Economics \enspace$\c
   ARC Discovery Project, \textit{An Experimental Economics Approach to Understanding Gambling Behaviour}
     (with Marco Faravelli and Lisa Farrell), \$282,509 [submitted twice; 2016 application ranked in top 10\% of unsuccessful applications] & 2016, 2017 \\
 \end{tabularx}
+\fi
 
 %% ===== TEACHING EXPERIENCE ====================================
 \section{Teaching Experience}
@@ -229,7 +247,9 @@ Industrial Organization \enspace$\cdot$\enspace Behavioral Economics \enspace$\c
 \section{Honors, Awards and Fellowships}
 
 \begin{itemize}
+\ifpublic\else
   \item Inaugural presenter, School of Economics \textit{Authentic Assessment: Community of Practice}, UQ, 2022
+\fi
   \item Distinguished Teaching Certificate, UQ School of Economics,
     International Industry Economics (small postgraduate courses), 2015
   \item Excellence in Teaching Award, UQ School of Economics,
