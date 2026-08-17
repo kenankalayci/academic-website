@@ -59,7 +59,7 @@ aliases:
 
 - **Team Gender Diversity in High-Stake Competitions** (with Redzo Mujcic). [Download the paper (PDF, 867 KB)](https://media.wix.com/ugd/108e6c_9f45c75c52844c0b998e91c56e6df735.pdf)
 - **No Pain, No Gain: An Experiment on Skill Accumulation** (with Lana Friesen and Bhagya Gunawardena).
-- **Algorithmic Third-Party Advice in Markets with Complex Goods** (with Zhengyang Bao).
+- **Algorithmic Third-Party Advice in Markets with Complex Goods** (with Leo Bao and Ruize Sun). [Download the paper (PDF, 3.3 MB)](/papers/Algorithmic_Third-Party_Advice_Bao_Kalayci_Sun_2026.pdf)
 
 [View working papers and projects →](/workingpapers/)
 
