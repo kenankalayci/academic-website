@@ -4,13 +4,12 @@ Last updated: 18 August 2026 (Australia/Brisbane)
 
 ## Current state
 
-The Hugo rebuild and website-audit improvement pass are committed and synchronized
-with `origin/main`. A new working-paper update is complete in the local working
-tree, but has not yet been committed, pushed, or deployed.
+The Hugo rebuild and website-audit improvement pass are complete. The production
+site is deployed from `main` through GitHub Pages.
 
 - Repository: `https://github.com/kenankalayci/academic-website`
 - Branch: `main`
-- Current deployed baseline: `d36ac5e`
+- Production branch: `main`
 - Production URL: `https://kenankalayci.com/`
 - Deployment: pushing to `main` runs `.github/workflows/deploy.yml` and publishes
   through GitHub Pages.
@@ -23,13 +22,15 @@ products. `CUTOVER_CHECKLIST.md` describes a migration that is already complete 
 is kept for historical reference only — in particular its rollback step, restoring
 `A @ 148.66.137.114`, is no longer available.
 
-## Pending working-paper update
+## Recent research updates
 
 - Added the August 2026 manuscript *Algorithmic Third-Party Advice in Markets with
   Complex Goods* as a local site download.
 - Corrected the co-authors from Zhengyang Bao to Leo Bao and Ruize Sun, matching
   the manuscript title page.
 - Updated both the homepage Current Research section and the Working Papers page.
+- Updated the public CV entry and linked its title to the downloadable manuscript.
+  The published 2020 article correctly retains the author name Zhengyang Bao.
 - Latest validation: 61 tracked URLs with zero failures or warnings; 23 generated
   HTML files passed validation; the 30-page PDF is present in the production build.
 
