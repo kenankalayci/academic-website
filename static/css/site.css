@@ -613,6 +613,7 @@ textarea:focus-visible {
 }
 
 .citation-list a[href*=".pdf" i],
+.citation-list a[href*="ssrn.com" i],
 .citation-list a[data-type="document"] {
   color: var(--accent-deep);
   font-weight: 600;
