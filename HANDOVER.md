@@ -1,6 +1,6 @@
 # Project handover
 
-Last updated: 18 August 2026 (Australia/Brisbane)
+Last updated: 17 September 2026 (Australia/Brisbane)
 
 ## Current state
 
@@ -24,15 +24,20 @@ is kept for historical reference only — in particular its rollback step, resto
 
 ## Recent research updates
 
-- Added the August 2026 manuscript *Algorithmic Third-Party Advice in Markets with
-  Complex Goods* as a local site download.
-- Corrected the co-authors from Zhengyang Bao to Leo Bao and Ruize Sun, matching
-  the manuscript title page.
-- Updated both the homepage Current Research section and the Working Papers page.
-- Updated the public CV entry and linked its title to the downloadable manuscript.
-  The published 2020 article correctly retains the author name Zhengyang Bao.
-- Latest validation: 61 tracked URLs with zero failures or warnings; 23 generated
-  HTML files passed validation; the 30-page PDF is present in the production build.
+- Retitled the August 2026 manuscript to *Algorithmic Advice in Markets with
+  Complex Goods* and moved it from a local site download to its SSRN page,
+  `https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7107878`. The local
+  `static/papers/Algorithmic_Third-Party_Advice_Bao_Kalayci_Sun_2026.pdf` was
+  deleted; no path on the site still points at it.
+- Co-authors are Leo Bao and Ruize Sun, matching the manuscript title page. The
+  published 2020 article correctly retains the author name Zhengyang Bao.
+- The homepage Current Research section, the Working Papers page, the public CV
+  source, and the built `static/CV/KALAYCI_CV.pdf` all carry the new title and
+  the SSRN link.
+- The repo CV source is the public version (`\publictrue`). The full version used
+  for appraisal/promotion lives outside this repo, at
+  `~/Library/CloudStorage/OneDrive-TheUniversityofQueensland/Kenan/Personal/Appraisal/Level D/KALAYCI_CV.tex`.
+  It has not been synced and still shows the old title and the old co-author.
 
 ## Audit work completed
 
