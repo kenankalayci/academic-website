@@ -1,6 +1,6 @@
 baseURL = "https://kenankalayci.com/"
 locale = "en-us"
-title = "Dr. Kenan Kalayci"
+title = "Dr. Kenan Kalaycı"
 enableRobotsTXT = true
 disableKinds = ["taxonomy", "term"]
 

@@ -1,10 +1,10 @@
 ---
 title: "Contact"
 date: 2013-06-18 00:52:18
-lastmod: 2026-07-27 00:00:00
+lastmod: 2026-09-17 00:00:00
 slug: contact
 wordpress_link: "https://kenankalayci.com/contact-2/"
-description: "Contact details for Dr Kenan Kalayci at the University of Queensland School of Economics."
+description: "Contact details for Dr Kenan Kalaycı at the University of Queensland School of Economics."
 aliases:
   - /contact-2/
   - /contact-3/
@@ -13,7 +13,7 @@ aliases:
 
 ## Contact Details
 
-### Dr Kenan Kalayci
+### Dr Kenan Kalaycı
 
 Room 510, Colin Clark Building (39)  
 School of Economics, The University of Queensland  
