@@ -37,7 +37,58 @@ is kept for historical reference only — in particular its rollback step, resto
 - The repo CV source is the public version (`\publictrue`). The full version used
   for appraisal/promotion lives outside this repo, at
   `~/Library/CloudStorage/OneDrive-TheUniversityofQueensland/Kenan/Personal/Appraisal/Level D/KALAYCI_CV.tex`.
-  It has not been synced and still shows the old title and the old co-author.
+  That copy has now been synced for this paper: same title, SSRN link and
+  co-authors, with `\publicfalse` preserved. It was test-compiled (5 pages, no
+  LaTeX errors). Its sibling `KALAYCI_CV.pdf` was **not** rebuilt — it was
+  already stale (30 May) against its source (27 July) before this change, so the
+  status quo was kept rather than sweeping in three months of unrelated edits.
+- The two CV copies drift in both directions, so neither is reliably newer.
+  Diff them before assuming either is current, and preserve the
+  `\publictrue` / `\publicfalse` line, which is the only intended difference
+  besides one cosmetic date-column spacing fix present in the repo copy only.
+
+## Presentation and naming (17 September 2026)
+
+- **Card surfaces moved from white to cream** (`#fbf9f4`). The page backdrop was
+  already cream but content sits in cards, which were white — so the surface
+  actually read on was plain. The `--surface` token alone was not enough:
+  `.home-card` and `.research-card` each override it with a hardcoded white
+  gradient, so all three needed changing. `--surface-tint` was nudged lighter so
+  the research-area boxes still lift against a cream parent; `--surface-strong`
+  stays white so nav pills and buttons keep reading as raised. Dark mode is
+  unaffected.
+- **SSRN links styled like PDF downloads.** `.citation-list` now matches
+  `ssrn.com` alongside `.pdf`, so paper-access links look consistent wherever the
+  paper lives. Add `doi.org` too if journal titles should also render bold navy —
+  deliberately left out, since it restyles every journal name.
+- **The displayed name now uses the Turkish dotless ı** (`Dr. Kenan Kalaycı`).
+  Editing `title` in `hugo.toml` was enough for the header, footer, page titles,
+  `author` meta, `og:site_name`, RSS and JSON-LD `Person.name`, because all read
+  `.Site.Title`. The contact page's visible heading and meta description were
+  fixed separately. Verified rendered on production with no mojibake.
+- **Still ASCII, by omission rather than intent:** the `keywords` array in
+  `hugo.toml` (which also feeds JSON-LD `knowsAbout`) and the `og:image:alt` /
+  `twitter:image:alt` strings in `layouts/_default/baseof.html`. Domain, email, X
+  handle and PDF filenames stay ASCII deliberately and must not change.
+- **A rust accent colour was tried and reverted.** Navy and burnt orange pair
+  well, but `#FFED00` is a UQ brand colour that has to stay, and navy + rust +
+  saturated yellow is a three-way conflict. Recorded so it is not re-attempted
+  blind.
+- `.claude/` is now git-ignored; it holds local editor and preview config only.
+
+## Open design proposal
+
+`reports/design-proposal-typography-and-layout.md` is a **draft, not
+implemented**. It covers two independent changes:
+
+- **Change A, raise the type scale** — root to 118%, shell to 1140px, 108% below
+  620px. Tested and measured; body copy goes 16.6px to 19.6px. The last two edits
+  are not optional, they fix regressions the first one causes.
+- **Change B, remove the card containers** — scoped but never prototyped. Roughly
+  six rules carry the card chrome, but the page background, inner panels, nav
+  pills and page gutter all have to follow.
+
+Neither is in `main`. The stylesheet is untouched by them.
 
 ## Audit work completed
 
@@ -103,10 +154,13 @@ Hugo production build:       passed
 Generated pages:             16
 Generated aliases:           10
 Processed images:            2
-Tracked URL validation:      61 checked, 0 failures, 0 warnings
+Tracked URL validation:      62 checked, 0 failures, 0 warnings
 Generated HTML validation:   23 files checked, passed
 JSON validation:             passed
 git diff --check:            passed
+Deployed commit:             d865282
+Production spot-check:       header/title/footer/JSON-LD and contact page all
+                             render “Kalaycı”, no mojibake
 ```
 
 The committed link report checks internal/site-owned URLs. Known broken external
@@ -151,7 +205,19 @@ March 2026 migration and is retained for history only.
 
 - Update publications in `data/publications.json`.
 - Update working papers in `data/working_papers.json`.
-- Update general profile metadata and navigation in `hugo.toml`.
+- **The homepage does not read those files.** `content/_index.md` hand-maintains
+  its own copies of the publications and current-research lists, so every
+  research change means editing the JSON *and* the homepage. Adding a new data
+  key also needs a matching render block in `layouts/_default/single.html`, or it
+  renders nothing.
+- The same split applies to CSS. The JSON-driven pages wrap entries in
+  `.citation-list`; the homepage's hand-written lists have no such wrapper, so a
+  rule scoped to `.citation-list` silently skips every research link on the
+  homepage. Check both when styling research links, and verify against built HTML
+  in `public/` rather than a single page.
+- Update general profile metadata and navigation in `hugo.toml`. Note that
+  `title` there is the displayed name and propagates widely through
+  `.Site.Title`.
 - Put new static downloads under `static/`, and page content under `content/`.
 - Preserve aliases when changing a published URL.
 - Let the deployment validators block releases with broken internal paths or HTML
