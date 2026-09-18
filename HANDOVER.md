@@ -1,6 +1,6 @@
 # Project handover
 
-Last updated: 18 September 2026 (Australia/Brisbane), second pass
+Last updated: 18 September 2026 (Australia/Brisbane), third pass
 
 ## Current state
 
@@ -158,6 +158,48 @@ Header height across the old breakpoint cliff is now flat:
 The 620/621 step is 1px, against 67px before this change and 142px under the
 rejected root scaling. No horizontal overflow at any width tested.
 
+## Post-review refinements (18 September 2026)
+
+A second design review of the live site accepted the direction and raised four
+issues, all reproduced and fixed. Two were regressions from this session's own
+work.
+
+- **Research section shortcuts.** Working Papers sat ~2,434px down the page at
+  390px with no way to skip. The five section headings now carry ids
+  (`#publications`, `#replication-reports`, `#working-papers`,
+  `#works-in-progress`, `#public-writing`) and a `.section-jump` row sits under
+  the intro. It renders conditionally — a link appears only if that data section
+  has entries — so an emptied section cannot leave a dead link.
+- **Contact was ~1,628px down `/about/` on mobile.** The homepage button now
+  points at `/about/#contact`. That anchor already existed: Markdown headings get
+  auto-generated ids from Goldmark, whereas the Research headings are hardcoded
+  in `single.html` and had none, which is why only one of the two needed layout
+  work.
+- **Mobile heading hierarchy was inverted** — a regression from the type-scale
+  change. `h3` was raised to 1.4rem but the mobile `h2` override stayed at
+  1.25rem, leaving h2 (20px) below h3 (22.4px) and only 0.8px above body text.
+  Mobile `h2` is now 1.55rem (24.8px).
+- **A leftover `border-radius: 20px`** on `.site-header` / `.page-card` below
+  700px survived the flattening and curved the ends of the new yellow header
+  rule. Removed.
+- **Paper titles now outrank their download links.** Titles are wrapped in
+  `<strong>`; the paper-access links dropped from `font-weight: 600` to 400,
+  keeping their colour and underline. Previously the download link was the only
+  emphasised element in each citation, so the page read as a list of downloads
+  rather than a list of papers.
+
+The title wrapping did **not** use the `title` field in the JSON: five entries
+differ from their `citation_html` in capitalisation and one uses `&ldquo;`
+entities. The boundary was derived from the markup instead — title ends at
+`. YYYY.`, or before ` (with`. The replication report contains `2024]` inside a
+bracketed citation, which the year-then-period pattern correctly skips. If
+citations are ever reformatted, re-check that assumption before re-running
+anything similar.
+
+Still outstanding from that review, deferred as editorial: the Supervision page
+is 981 words with no subheadings and needs section breaks only the owner can
+write.
+
 ## Audit work completed
 
 ### Performance and privacy
@@ -233,7 +275,8 @@ Responsive check:            1440/1200/1010/900/700/621/620/390/375/320px,
                              no horizontal overflow at any width
 Colour schemes:              light and dark both verified
 Behavioural JavaScript:      none (JSON-LD blocks only), checked on production
-Deployed commit:             1a7b8c2
+Anchor targets:              all #refs on /research/ resolve, no danglers
+Heading order:               h2 24.8px > h3 22.4px > body 19.2px on mobile
 Not yet proofed:             print (no @media print block exists)
 ```
 
@@ -301,6 +344,13 @@ March 2026 migration and is retained for history only.
   rather than a single page.
 - To add a public article, give its page `research_writing: true` and it appears
   in the Public Writing section of `/research/` automatically.
+- `/research/` section headings and the `.section-jump` row are both generated in
+  `single.html`. Adding a section means adding its heading id *and* a matching
+  conditional link in that row, or the shortcut list falls out of step with the
+  page.
+- Paper titles in `citation_html` are wrapped in `<strong>`. Keep that when
+  adding an entry, or the new paper will read as less important than the ones
+  around it.
 - Update general profile metadata and navigation in `hugo.toml`. Note that
   `title` there is the displayed name and propagates widely through
   `.Site.Title`.
