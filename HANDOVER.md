@@ -1,6 +1,6 @@
 # Project handover
 
-Last updated: 17 September 2026 (Australia/Brisbane)
+Last updated: 18 September 2026 (Australia/Brisbane)
 
 ## Current state
 
@@ -76,19 +76,62 @@ is kept for historical reference only — in particular its rollback step, resto
   blind.
 - `.claude/` is now git-ignored; it holds local editor and preview config only.
 
-## Open design proposal
+## Flat layout and type scale (18 September 2026)
 
-`reports/design-proposal-typography-and-layout.md` is a **draft, not
-implemented**. It covers two independent changes:
+`reports/design-proposal-typography-and-layout.md` was drafted, reviewed,
+revised and **implemented**. It is now an implementation record; superseded
+claims are struck through rather than deleted, so the reasoning stays auditable.
 
-- **Change A, raise the type scale** — root to 118%, shell to 1140px, 108% below
-  620px. Tested and measured; body copy goes 16.6px to 19.6px. The last two edits
-  are not optional, they fix regressions the first one causes.
-- **Change B, remove the card containers** — scoped but never prototyped. Roughly
-  six rules carry the card chrome, but the page background, inner panels, nav
-  pills and page gutter all have to follow.
+- **Flat layout.** Page ground is a solid `--page` token (`#fbf9f4` light,
+  `#0d1c30` dark) — solid because a translucent `body` background composites
+  against the white canvas. Card backgrounds, borders, radii, shadows and
+  `backdrop-filter` are off `.site-header`, `.page-card`, `.home-card` and
+  `.research-card`. The per-card 6px accent strip is now a single 2px yellow rule
+  under the header. Research areas are ruled columns. Nav pills are flat links.
+- **Type.** Body copy 16.6 → 19.6px (18px mobile), `h3` → 22.4px, `h2` minimum →
+  24.8px. **The root font size is deliberately untouched.** Root scaling was
+  tried and rejected in review: `clamp()` headings with `vw` middle terms ignore
+  the root, so body text grows while headings stand still and the ratio
+  compresses at mid widths. Leaving the root alone also keeps the homepage hero
+  at its 58.4px cap, keeps nav wrapping unchanged, and made the proposed 1140px
+  shell widening unnecessary. **Do not reintroduce root scaling.**
+- **Kept deliberately:** buttons stay recognisable controls; `.location-card`
+  and `.section-link-list` tiles keep a border and small radius for grouping but
+  lose gradient and shadow; yellow survives as the header rule and nav hover.
 
-Neither is in `main`. The stylesheet is untouched by them.
+## Navigation restructure (18 September 2026)
+
+Navigation went from nine tabs to four: **About · Research · Supervision ·
+Links**.
+
+- `/publications/` and `/workingpapers/` merged into **`/research/`**, which
+  renders both data files plus a Public Writing section. `single.html` gained a
+  `data_file: research` mode that renders both sets; the old single-purpose
+  values still work.
+- Public Writing is driven by a `research_writing: true` page param, not
+  hardcoded. Tagging a future article adds it to `/research/` automatically.
+- `/contact/` merged into **`/about/`** as a `## Contact` section, carrying the
+  address, phone, email and the Google Maps panel.
+- `/vitae/` **deleted** — its content was already elsewhere (CV download is a
+  homepage button; the snapshot facts are in the About prose).
+- `/grants-awards-fellowships/` **deleted at the owner's request**. Note: the
+  three teaching awards and the grant figures ($358k DECRA, $20k UQ ECR) existed
+  nowhere else on the site and now survive only in the CV PDF. Restore from git
+  if wanted.
+- `/blog-posts/` listing page removed; the Confusopoly article keeps its own URL
+  and is linked from `/research/`.
+
+Every retired URL redirects rather than 404s:
+
+| Old | Now |
+|---|---|
+| `/publications/`, `/workingpapers/`, `/blog-posts/` | `/research/` |
+| `/contact/`, `/contact-2/`, `/contact-3/`, `/location/`, `/kenan/` | `/about/` |
+
+`/vitae/` and `/grants-awards-fellowships/` are fully gone; nothing linked to
+them. **`/contact/` was the canonical contact URL and is now a redirect** — if
+it appears on business cards, a course profile or the UQ staff page, those still
+work, but the URL people land on has changed.
 
 ## Audit work completed
 
@@ -119,7 +162,8 @@ Neither is in `main`. The stylesheet is untouched by them.
 - Updated the About, Publications, Working Papers, Blog, Contact, Teaching, Vitae,
   Grants, and Links content.
 - Established `/contact/` as the canonical contact URL, with aliases for the old
-  WordPress paths.
+  WordPress paths. *Superseded 18 September 2026: `/contact/` now redirects to
+  `/about/` — see the navigation restructure above.*
 - Redirected `/kenan/` to the homepage and removed empty or obsolete content,
   including `/mturkfeedback/`, `/contact-3/`, duplicate Confusopoly content, and
   unused taxonomy pages.
@@ -151,16 +195,16 @@ Run locally with Hugo 0.164.0:
 
 ```text
 Hugo production build:       passed
-Generated pages:             16
-Generated aliases:           10
+Generated pages:             11
+Generated aliases:           14
 Processed images:            2
-Tracked URL validation:      62 checked, 0 failures, 0 warnings
-Generated HTML validation:   23 files checked, passed
+Tracked URL validation:      56 checked, 0 failures, 0 warnings
+Generated HTML validation:   22 files checked, passed
 JSON validation:             passed
 git diff --check:            passed
-Deployed commit:             d865282
-Production spot-check:       header/title/footer/JSON-LD and contact page all
-                             render “Kalaycı”, no mojibake
+Responsive check:            1440/1200/1010/900/700/621/620/375px, no overflow
+Colour schemes:              light and dark both verified
+Not yet proofed:             print (no @media print block exists)
 ```
 
 The committed link report checks internal/site-owned URLs. Known broken external
@@ -203,18 +247,20 @@ March 2026 migration and is retained for history only.
 
 ## Future maintenance
 
-- Update publications in `data/publications.json`.
-- Update working papers in `data/working_papers.json`.
+- Update publications in `data/publications.json` and working papers in
+  `data/working_papers.json`. Both now render on the single `/research/` page.
 - **The homepage does not read those files.** `content/_index.md` hand-maintains
   its own copies of the publications and current-research lists, so every
   research change means editing the JSON *and* the homepage. Adding a new data
   key also needs a matching render block in `layouts/_default/single.html`, or it
   renders nothing.
-- The same split applies to CSS. The JSON-driven pages wrap entries in
-  `.citation-list`; the homepage's hand-written lists have no such wrapper, so a
-  rule scoped to `.citation-list` silently skips every research link on the
-  homepage. Check both when styling research links, and verify against built HTML
-  in `public/` rather than a single page.
+- The same split applies to CSS. `/research/` wraps entries in `.citation-list`;
+  the homepage's hand-written lists have no such wrapper, so a rule scoped to
+  `.citation-list` silently skips every research link on the homepage. Check
+  both when styling research links, and verify against built HTML in `public/`
+  rather than a single page.
+- To add a public article, give its page `research_writing: true` and it appears
+  in the Public Writing section of `/research/` automatically.
 - Update general profile metadata and navigation in `hugo.toml`. Note that
   `title` there is the displayed name and propagates widely through
   `.Site.Title`.
