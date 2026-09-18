@@ -1,6 +1,7 @@
 :root {
   --bg: #f5f5f0;
   --bg-soft: #ebebea;
+  --measure: 720px;
   --page: #fbf9f4;
   --surface: rgba(251, 249, 244, 0.96);
   --surface-strong: #ffffff;
@@ -238,6 +239,7 @@ textarea:focus-visible {
   margin-top: 2.3rem;
   margin-bottom: 0.55rem;
   padding-top: 1.2rem;
+  max-width: var(--measure);
   border-top: 1px solid var(--line);
   font-size: clamp(1.55rem, 2.3vw, 1.9rem);
   line-height: 1.12;
@@ -246,6 +248,7 @@ textarea:focus-visible {
 .page-card h3 {
   margin-top: 1.5rem;
   margin-bottom: 0.4rem;
+  max-width: var(--measure);
   font-size: 1.4rem;
   line-height: 1.25;
 }
@@ -262,7 +265,7 @@ textarea:focus-visible {
 .page-card ol,
 .page-card blockquote,
 .page-card table {
-  max-width: 70ch;
+  max-width: var(--measure);
 }
 
 .page-card ul,
@@ -331,7 +334,7 @@ textarea:focus-visible {
 }
 
 .home-intro h2 {
-  max-width: 18ch;
+  max-width: var(--measure);
   margin: 0.4rem 0 0.85rem;
   padding: 0;
   border: 0;
@@ -349,13 +352,13 @@ textarea:focus-visible {
 }
 
 .home-lede {
-  max-width: 60ch !important;
+  max-width: var(--measure) !important;
   font-size: clamp(1.2rem, 2.4vw, 1.45rem) !important;
 }
 
 .action-row {
   display: flex;
-  max-width: none !important;
+  max-width: var(--measure) !important;
   flex-wrap: wrap;
   gap: 0.7rem;
   margin-top: 1.35rem !important;
@@ -398,7 +401,7 @@ textarea:focus-visible {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1.6rem;
-  max-width: none;
+  max-width: var(--measure);
 }
 
 .research-areas > div {
@@ -444,7 +447,7 @@ textarea:focus-visible {
 .section-link-list {
   list-style: none;
   padding: 0;
-  max-width: none;
+  max-width: var(--measure);
   display: grid;
   gap: 0.85rem;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -482,6 +485,7 @@ textarea:focus-visible {
   display: flex;
   flex-wrap: wrap;
   gap: 0.35rem 1.4rem;
+  max-width: var(--measure);
   margin: 1.4rem 0 0.4rem;
   padding-bottom: 1.1rem;
   border-bottom: 1px solid var(--line);
@@ -629,14 +633,6 @@ textarea:focus-visible {
   .site-shell {
     max-width: 100%;
     padding: 1rem;
-  }
-
-  .page-card p,
-  .page-card ul,
-  .page-card ol,
-  .page-card blockquote,
-  .page-card table {
-    max-width: none;
   }
 }
 
