@@ -1,18 +1,22 @@
 {{ define "main" }}
-  <article class="page-card single-card content-flow{{ if or (eq .Params.data_file "publications") (eq .Params.data_file "working_papers") }} research-card{{ end }}">
+  {{ $research := eq .Params.data_file "research" }}
+  {{ $showPubs := or $research (eq .Params.data_file "publications") }}
+  {{ $showWork := or $research (eq .Params.data_file "working_papers") }}
+  <article class="page-card single-card content-flow{{ if or $showPubs $showWork }} research-card{{ end }}">
     <h1>{{ .Title }}</h1>
     {{ if .Content }}{{ .Content }}{{ end }}
 
-    {{ if or (eq .Params.data_file "publications") (eq .Params.data_file "working_papers") }}
-      {{ $collectionType := cond (eq .Params.data_file "publications") "ScholarlyArticle" "CreativeWork" }}
+    {{ if or $showPubs $showWork }}
+      {{ $collectionType := cond $showPubs "ScholarlyArticle" "CreativeWork" }}
       {{ $collectionSchema := dict "@context" "https://schema.org" "@type" "CollectionPage" "name" .Title "url" .Permalink "description" (.Description | default (.Summary | plainify) | default .Site.Params.description) "mainEntity" (dict "@type" "ItemList" "itemListElement" (slice (dict "@type" $collectionType))) }}
       <script type="application/ld+json">{{ $collectionSchema | jsonify | safeJS }}</script>
     {{ end }}
 
-    {{ if eq .Params.data_file "publications" }}
+    {{ if $showPubs }}
       {{ $publications := index hugo.Data "publications" }}
       {{ if $publications.entries }}
         <section class="research-collection research-collection-publications">
+          {{ if $research }}<h2>Publications</h2>{{ end }}
           <ol class="citation-list citation-list-ordered">
             {{ range $publications.entries }}
               <li>
@@ -37,7 +41,7 @@
       {{ end }}
     {{ end }}
 
-    {{ if eq .Params.data_file "working_papers" }}
+    {{ if $showWork }}
       {{ $working := index hugo.Data "working_papers" }}
       {{ if $working.papers }}
         <section class="research-collection research-collection-working-papers">
@@ -56,6 +60,20 @@
           <ul class="citation-list citation-list-unordered">
             {{ range $working.works_in_progress }}
               <li>{{ .citation_html | safeHTML }}</li>
+            {{ end }}
+          </ul>
+        </section>
+      {{ end }}
+    {{ end }}
+
+    {{ if $research }}
+      {{ $writing := where site.RegularPages "Params.research_writing" true }}
+      {{ if $writing }}
+        <section class="research-collection research-collection-writing">
+          <h2>Public Writing</h2>
+          <ul class="citation-list citation-list-unordered">
+            {{ range $writing }}
+              <li><a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ with .Description }} — {{ . }}{{ end }}</li>
             {{ end }}
           </ul>
         </section>

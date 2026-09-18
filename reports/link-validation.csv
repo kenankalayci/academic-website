@@ -1,7 +1,7 @@
 url,type,status,detail
 /CV/KALAYCI_CV.pdf,internal_relative,ok,
-/contact/,internal_relative,ok,
-/publications/,internal_relative,ok,
+/about/,internal_relative,ok,
+/research/,internal_relative,ok,
 https://about.uq.edu.au/experts/2487,external,ok,skipped external check
 https://au.linkedin.com/in/kenankalayci,external,ok,skipped external check
 https://blogs.ubc.ca/khead/research/research-advice/formula,external,ok,skipped external check
@@ -17,16 +17,10 @@ https://haushofer.ne.su.se/,external,ok,skipped external check
 https://journals.sagepub.com/doi/full/10.1177/0569434515627089,external,ok,skipped external check
 https://kenankalayci.com/,internal_absolute,ok,
 https://kenankalayci.com/about/,internal_absolute,ok,
-https://kenankalayci.com/blog-posts/,internal_absolute,ok,
 https://kenankalayci.com/blog-posts/confusopoly-why-companies-are-motivated-to-deliberately-confuse/,internal_absolute,ok,
 https://kenankalayci.com/blog-posts/links-and-resources/,internal_absolute,ok,
-https://kenankalayci.com/contact-2/,internal_absolute,ok,
-https://kenankalayci.com/grants-awards-fellowships/,internal_absolute,ok,
-https://kenankalayci.com/publications/,internal_absolute,ok,
 https://kenankalayci.com/supervision/,internal_absolute,ok,
 https://kenankalayci.com/teaching/,internal_absolute,ok,
-https://kenankalayci.com/vitae/,internal_absolute,ok,
-https://kenankalayci.com/workingpapers/,internal_absolute,ok,
 https://library.princeton.edu/dss/training,external,ok,skipped external check
 https://maps.app.goo.gl/T2TKuhYzvXQNzpRd8,external,ok,skipped external check
 https://marcfbellemare.com/wordpress/10053,external,ok,skipped external check

@@ -20,8 +20,8 @@ aliases:
 
 <p class="action-row">
   <a class="button-link button-primary" href="/CV/KALAYCI_CV.pdf">Download CV <span aria-hidden="true">↓</span></a>
-  <a class="button-link" href="/publications/">View publications <span aria-hidden="true">→</span></a>
-  <a class="button-link" href="/contact/">Contact me <span aria-hidden="true">→</span></a>
+  <a class="button-link" href="/research/">View research <span aria-hidden="true">→</span></a>
+  <a class="button-link" href="/about/">Contact me <span aria-hidden="true">→</span></a>
 </p>
 
 </div>
@@ -49,7 +49,7 @@ aliases:
 - **Do Regulations Work?** 2020. *Journal of Economic Behavior and Organization* (with Zhengyang Bao, Andreas Leibbrandt, and Carlos Oyarzun). [Download the paper (PDF, 4.9 MB)](/wp-content/uploads/2020/08/Bao_et_al_JEBO_2020.pdf)
 - **Confusopoly: Competition and Obfuscation in Markets.** 2016. *Experimental Economics*. [Download the paper (PDF, 659 KB)](/wp-content/uploads/2013/06/Confusopoly_ExpEcon2015_Kalayci.pdf)
 
-[View all publications →](/publications/)
+[View all publications →](/research/)
 
 ## Replication reports
 
@@ -61,7 +61,7 @@ aliases:
 - **No Pain, No Gain: An Experiment on Skill Accumulation** (with Lana Friesen and Bhagya Gunawardena).
 - **Algorithmic Advice in Markets with Complex Goods** (with Leo Bao and Ruize Sun). [View on SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7107878)
 
-[View working papers and projects →](/workingpapers/)
+[View working papers and projects →](/research/)
 
 ## Supervision
 

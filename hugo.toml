@@ -16,7 +16,7 @@ disableKinds = ["taxonomy", "term"]
   uqProfileUrl = "https://about.uq.edu.au/experts/2487"
   orcidUrl = "https://orcid.org/0000-0002-4815-7344"
   scholarUrl = "https://scholar.google.com.au/citations?user=eFCAIjYAAAAJ"
-  contactPath = "/contact/"
+  contactPath = "/about/"
   profileImage = "images/profile.jpg"
   socialImage = "/images/kenan-kalayci-social-card.jpg"
 
@@ -35,41 +35,16 @@ disableKinds = ["taxonomy", "term"]
   weight = 10
 
 [[menu.main]]
-  name = "Publications"
-  url = "/publications/"
-  weight = 15
-
-[[menu.main]]
-  name = "Working Papers"
-  url = "/workingpapers/"
-  weight = 30
+  name = "Research"
+  url = "/research/"
+  weight = 20
 
 [[menu.main]]
   name = "Supervision"
   url = "/supervision/"
-  weight = 20
-
-[[menu.main]]
-  name = "Vitae"
-  url = "/vitae/"
-  weight = 50
-
-[[menu.main]]
-  name = "Grants"
-  url = "/grants-awards-fellowships/"
-  weight = 60
+  weight = 30
 
 [[menu.main]]
   name = "Links"
   url = "/links-and-resources/"
-  weight = 70
-
-[[menu.main]]
-  name = "Blog"
-  url = "/blog-posts/"
-  weight = 80
-
-[[menu.main]]
-  name = "Contact"
-  url = "/contact/"
-  weight = 90
+  weight = 40

@@ -5,6 +5,7 @@ lastmod: 2015-12-17 02:03:26
 slug: confusopoly-why-companies-are-motivated-to-deliberately-confuse
 wordpress_link: "https://kenankalayci.com/blog-posts/confusopoly-why-companies-are-motivated-to-deliberately-confuse/"
 description: "Why product and price complexity can weaken competition, confuse consumers, and create difficult challenges for market regulation."
+research_writing: true
 aliases:
   - /blog-posts/confusopoly-why-companies-are-motivated-to-deliberately-confuse/
   - /blog-posts/confusopoly-companies-motivated-deliberately-confuse/
