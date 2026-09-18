@@ -478,6 +478,29 @@ textarea:focus-visible {
   background: transparent;
 }
 
+.section-jump {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.4rem;
+  margin: 1.4rem 0 0.4rem;
+  padding-bottom: 1.1rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.section-jump a {
+  color: var(--muted);
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+}
+
+.section-jump a:hover,
+.section-jump a:focus-visible {
+  color: var(--accent-deep);
+  border-bottom-color: var(--accent-soft);
+}
+
 .research-collection {
   margin-top: 1.8rem;
 }
@@ -552,7 +575,6 @@ textarea:focus-visible {
 .citation-list a[href*="ssrn.com" i],
 .citation-list a[data-type="document"] {
   color: var(--accent-deep);
-  font-weight: 600;
   text-decoration-color: rgba(0, 45, 114, 0.35);
 }
 
@@ -623,11 +645,6 @@ textarea:focus-visible {
     padding: 0.8rem;
   }
 
-  .site-header,
-  .page-card {
-    border-radius: 20px;
-  }
-
   .site-header {
     padding: 1.1rem 1rem 0.95rem;
   }
@@ -694,7 +711,7 @@ textarea:focus-visible {
   }
 
   .page-card h2 {
-    font-size: 1.25rem;
+    font-size: 1.55rem;
   }
 
   .home-intro h2 {

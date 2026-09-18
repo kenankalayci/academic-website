@@ -12,11 +12,24 @@
       <script type="application/ld+json">{{ $collectionSchema | jsonify | safeJS }}</script>
     {{ end }}
 
+    {{ if $research }}
+      {{ $pubs := index hugo.Data "publications" }}
+      {{ $wp := index hugo.Data "working_papers" }}
+      {{ $writing := where site.RegularPages "Params.research_writing" true }}
+      <nav class="section-jump" aria-label="Sections on this page">
+        {{ if $pubs.entries }}<a href="#publications">Publications</a>{{ end }}
+        {{ if $pubs.replication_reports }}<a href="#replication-reports">Replication Reports</a>{{ end }}
+        {{ if $wp.papers }}<a href="#working-papers">Working Papers</a>{{ end }}
+        {{ if $wp.works_in_progress }}<a href="#works-in-progress">Works In Progress</a>{{ end }}
+        {{ if $writing }}<a href="#public-writing">Public Writing</a>{{ end }}
+      </nav>
+    {{ end }}
+
     {{ if $showPubs }}
       {{ $publications := index hugo.Data "publications" }}
       {{ if $publications.entries }}
         <section class="research-collection research-collection-publications">
-          {{ if $research }}<h2>Publications</h2>{{ end }}
+          {{ if $research }}<h2 id="publications">Publications</h2>{{ end }}
           <ol class="citation-list citation-list-ordered">
             {{ range $publications.entries }}
               <li>
@@ -29,7 +42,7 @@
 
       {{ if $publications.replication_reports }}
         <section class="research-collection research-collection-replication">
-          <h2>Replication Reports</h2>
+          <h2 id="replication-reports">Replication Reports</h2>
           <ol class="citation-list citation-list-ordered">
             {{ range $publications.replication_reports }}
               <li>
@@ -45,7 +58,7 @@
       {{ $working := index hugo.Data "working_papers" }}
       {{ if $working.papers }}
         <section class="research-collection research-collection-working-papers">
-          <h2>Working Papers</h2>
+          <h2 id="working-papers">Working Papers</h2>
           <ul class="citation-list citation-list-unordered">
             {{ range $working.papers }}
               <li>{{ .citation_html | safeHTML }}</li>
@@ -56,7 +69,7 @@
 
       {{ if $working.works_in_progress }}
         <section class="research-collection research-collection-in-progress">
-          <h2>Works In Progress</h2>
+          <h2 id="works-in-progress">Works In Progress</h2>
           <ul class="citation-list citation-list-unordered">
             {{ range $working.works_in_progress }}
               <li>{{ .citation_html | safeHTML }}</li>
@@ -70,7 +83,7 @@
       {{ $writing := where site.RegularPages "Params.research_writing" true }}
       {{ if $writing }}
         <section class="research-collection research-collection-writing">
-          <h2>Public Writing</h2>
+          <h2 id="public-writing">Public Writing</h2>
           <ul class="citation-list citation-list-unordered">
             {{ range $writing }}
               <li><a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ with .Description }} — {{ . }}{{ end }}</li>
