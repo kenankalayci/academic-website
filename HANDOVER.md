@@ -1,6 +1,6 @@
 # Project handover
 
-Last updated: 18 September 2026 (Australia/Brisbane)
+Last updated: 18 September 2026 (Australia/Brisbane), second pass
 
 ## Current state
 
@@ -133,6 +133,31 @@ them. **`/contact/` was the canonical contact URL and is now a redirect** — if
 it appears on business cards, a course profile or the UQ staff page, those still
 work, but the URL people land on has changed.
 
+### The mobile disclosure menu is gone, and with it all JavaScript
+
+With four items a menu was unnecessary, so the tabs sit inline at every width and
+wrap to a second row only below about 340px.
+
+**The site now ships zero behavioural JavaScript.** The hamburger handler was the
+only script, and a companion script existed solely to add a `.js` class so CSS
+could hide the nav when JS was available. Both are gone, along with the
+`.nav-toggle` / `.nav-toggle-icon` rules and the `.js`-scoped nav rules. Built
+pages carry only JSON-LD `<script type="application/ld+json">` blocks — verified
+on production across all five pages. Navigation no longer depends on JS to work.
+
+If a future change reintroduces a script, that claim stops being true; the
+`validate_built_site.py` privacy checks do not currently assert it.
+
+Header height across the old breakpoint cliff is now flat:
+
+| Width | 320px | 390px | 620px | 621px | 1010px |
+|---|---|---|---|---|---|
+| Nav rows | 2 | 1 | 1 | 1 | 1 |
+| Header | 259px | 183px | 183px | 184px | 188px |
+
+The 620/621 step is 1px, against 67px before this change and 142px under the
+rejected root scaling. No horizontal overflow at any width tested.
+
 ## Audit work completed
 
 ### Performance and privacy
@@ -149,7 +174,9 @@ work, but the URL people land on has changed.
 
 - Ensured every generated content page has exactly one `<h1>`.
 - Added an accessible mobile navigation button, `aria-current` navigation state,
-  keyboard focus styling, and 44px mobile interaction targets.
+  keyboard focus styling, and 44px mobile interaction targets. *Superseded
+  18 September 2026: the navigation button is gone — see "Navigation restructure"
+  above. `aria-current`, focus styling and 44px targets all remain.*
 - Added dark-mode and reduced-motion support.
 - Added a branded 404 page with navigation back into the site.
 - Checked the site at desktop and 390px mobile widths; no horizontal overflow was
@@ -202,10 +229,23 @@ Tracked URL validation:      56 checked, 0 failures, 0 warnings
 Generated HTML validation:   22 files checked, passed
 JSON validation:             passed
 git diff --check:            passed
-Responsive check:            1440/1200/1010/900/700/621/620/375px, no overflow
+Responsive check:            1440/1200/1010/900/700/621/620/390/375/320px,
+                             no horizontal overflow at any width
 Colour schemes:              light and dark both verified
+Behavioural JavaScript:      none (JSON-LD blocks only), checked on production
+Deployed commit:             1a7b8c2
 Not yet proofed:             print (no @media print block exists)
 ```
+
+Two traps when verifying CSS changes locally, both of which produced wrong
+readings during this work:
+
+- The Hugo dev server serves `static/css/site.css` cached, and
+  `location.reload(true)` is ignored by modern browsers. Measurements can reflect
+  the *previous* stylesheet. Swap the `<link>` href with a cache-busting query to
+  get true values.
+- Screenshots can lag DOM reflow after a stylesheet swap or a colour-scheme
+  switch. Trust computed styles over a screenshot when they disagree.
 
 The committed link report checks internal/site-owned URLs. Known broken external
 article links were repaired manually. A fully live external-link crawl is not part
