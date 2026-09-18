@@ -1,6 +1,6 @@
 # Project handover
 
-Last updated: 18 September 2026 (Australia/Brisbane), third pass
+Last updated: 18 September 2026 (Australia/Brisbane), fourth pass
 
 ## Current state
 
@@ -200,6 +200,54 @@ Still outstanding from that review, deferred as editorial: the Supervision page
 is 981 words with no subheadings and needs section breaks only the owner can
 write.
 
+## One shared content measure (18 September 2026)
+
+Section widths were ragged: on the homepage at 1200px, inside a 910px card,
+content stopped at five different right edges — 652 (eyebrow), 727 (citation
+lists), 838 (lede), 862 (hero) and 1055 (headings, buttons, research grid).
+
+The most visible symptom was **not** the research grid but the `h2` rules. Each
+`h2` carries a `border-top`; uncapped, that rule spanned the full card while its
+own content stopped up to 328px short, so every section was announced by a line
+wider than anything beneath it.
+
+Fixed with a single `--measure: 720px` token, now referenced in nine rules:
+prose blocks, `h2`, `h3`, the hero headline, the lede, the action row, the
+research grid, the section-link tiles and the section-jump row. Changing the
+column width is one edit.
+
+720px was chosen against measured prose, not the `ch` unit. Real average
+character width in Source Serif 4 at 19.6px is 9.0px, so 720px is ~80
+characters. An earlier estimate of ~86 used `ch` (the width of a "0" glyph),
+which is wider than average prose and gave a misleading answer.
+
+Left deliberately narrower, and correct to leave: `h1` at `14ch`, the 404
+heading at `18ch`, and `.location-card` at `36rem` — the panel has a border,
+which makes it a distinct component rather than a column of text.
+
+### The fix was initially incomplete
+
+`@media (max-width: 900px)` still reset prose, lists, blockquotes and tables to
+`max-width: none` — a leftover from when `70ch` was the only cap and needed
+releasing on narrow screens. With a shared measure it is redundant, because
+`max-width` already yields when there is less space.
+
+Between 700px and 900px it un-did the fix and made things worse than before: at
+850px prose and citation lists ran to 834 while section rules stopped at 736, so
+content **overhung its own heading rule** by 98px. The override was removed.
+Verified aligned at 1440, 900, 850, 760, 720 and 700px, no overflow.
+
+**The deployment checks cannot catch this.** `validate_built_site.py` inspects
+generated HTML and the link validator checks URLs; neither evaluates CSS at a
+viewport. Whenever the measure or a breakpoint changes, measure rendered box
+edges at intermediate widths — 850px in particular, which falls between the
+900px and 700px breakpoints.
+
+Two related facts worth keeping straight: the research grid drops to one column
+at **700px**, not at the 720px measure; and matching box edges is not the same
+as text visually ending together — ragged line endings inside a measure are
+normal and not worth chasing.
+
 ## Audit work completed
 
 ### Performance and privacy
@@ -277,6 +325,7 @@ Colour schemes:              light and dark both verified
 Behavioural JavaScript:      none (JSON-LD blocks only), checked on production
 Anchor targets:              all #refs on /research/ resolve, no danglers
 Heading order:               h2 24.8px > h3 22.4px > body 19.2px on mobile
+Content measure:             one right edge at 1440/900/850/760/720/700px
 Not yet proofed:             print (no @media print block exists)
 ```
 
@@ -351,6 +400,10 @@ March 2026 migration and is retained for history only.
 - Paper titles in `citation_html` are wrapped in `<strong>`. Keep that when
   adding an entry, or the new paper will read as less important than the ones
   around it.
+- Content width is one token, `--measure`. Cap new block-level sections with
+  `max-width: var(--measure)` or they will run wider than everything else, and
+  never add a `max-width: none` override in a breakpoint — that is exactly what
+  broke the alignment between 700 and 900px.
 - Update general profile metadata and navigation in `hugo.toml`. Note that
   `title` there is the displayed name and propagates widely through
   `.Site.Title`.
