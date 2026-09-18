@@ -4,7 +4,7 @@ date: 2013-06-18 00:52:24
 lastmod: 2026-07-27 00:00:00
 slug: home
 wordpress_link: "https://kenankalayci.com/"
-description: "Dr Kenan Kalayci is a Senior Lecturer in Economics at the University of Queensland researching behavioural industrial organization, consumer decision-making, and market design."
+description: "Dr Kenan Kalaycı is a Senior Lecturer in Economics at the University of Queensland researching behavioural industrial organization, consumer decision-making, and market design."
 aliases:
   - /home/
   - /mturkfeedback/

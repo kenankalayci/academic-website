@@ -4,7 +4,7 @@ date: 2019-01-07 20:24:52
 lastmod: 2026-09-18 00:00:00
 slug: about
 wordpress_link: "https://kenankalayci.com/about/"
-description: "Biography, research interests, and academic profiles for Dr Kenan Kalayci, experimental economist at The University of Queensland."
+description: "Biography, research interests, academic profiles, and contact details for Dr Kenan Kalaycı, experimental economist at The University of Queensland."
 aliases:
   - /kenan/
   - /contact/
