@@ -40,7 +40,6 @@
     <link rel="alternate" href="{{ "/index.xml" | relURL }}" type="application/rss+xml" title="{{ .Site.Title }}" />
     <link rel="stylesheet" href="{{ "/css/fonts.css" | relURL }}" />
     <link rel="stylesheet" href="{{ "/css/site.css" | relURL }}" />
-    <script>document.documentElement.classList.add("js");</script>
     <script type="application/ld+json">{{ $personSchema | jsonify | safeJS }}</script>
     <script type="application/ld+json">{{ $siteSchema | jsonify | safeJS }}</script>
   </head>
@@ -66,11 +65,7 @@
             <p class="site-tagline">{{ .Site.Params.jobTitle }}</p>
           </div>
         </div>
-        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-navigation">
-          <span>Menu</span>
-          <span class="nav-toggle-icon" aria-hidden="true"></span>
-        </button>
-        <nav id="site-navigation" class="site-nav" aria-label="Main navigation">
+        <nav class="site-nav" aria-label="Main navigation">
           <ul>
             {{ range .Site.Menus.main }}
               {{ $active := or ($.IsMenuCurrent "main" .) ($.HasMenuCurrent "main" .) (eq $.RelPermalink .URL) }}
@@ -93,17 +88,5 @@
         </p>
       </footer>
     </div>
-    <script>
-      (() => {
-        const button = document.querySelector(".nav-toggle");
-        const navigation = document.querySelector(".site-nav");
-        if (!button || !navigation) return;
-        button.addEventListener("click", () => {
-          const open = button.getAttribute("aria-expanded") === "true";
-          button.setAttribute("aria-expanded", String(!open));
-          navigation.classList.toggle("is-open", !open);
-        });
-      })();
-    </script>
   </body>
 </html>
